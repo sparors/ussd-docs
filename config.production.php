@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'baseUrl' => 'https://my-jigsaw-docs.com',
+    'baseUrl' => 'https://sparors.github.io/ussd-docs',
     'production' => true,
 
     // DocSearch credentials
