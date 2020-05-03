@@ -56,5 +56,5 @@ module.exports = {
       }
       addUtilities(newUtilities)
     }
-  ]
+  ],
 }
