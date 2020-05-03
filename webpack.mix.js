@@ -16,9 +16,9 @@ mix.js('source/_assets/js/main.js', 'js')
             require('tailwindcss'),
         ],
     })
-    // .purgeCss({
-    //     content: ['source/**/*.html', 'source/**/*.md', 'source/**/*.js', 'source/**/*.php', 'source/**/*.vue'],
-    //     whitelistPatterns: [/language/, /hljs/, /algolia/],
-    // })
+    .purgeCss({
+        content: ['source/**/*.html', 'source/**/*.md', 'source/**/*.js', 'source/**/*.php', 'source/**/*.vue'],
+        whitelistPatterns: [/language/, /hljs/, /algolia/],
+    })
     .sourceMaps()
     .version();
