@@ -1,0 +1,39 @@
+---
+title: Creating States
+description: Quickly Scafford States
+extends: _layouts.documentation
+section: content
+---
+# Creating States {#creating-states}
+
+Laravel uses PSR-4 autoloading to load all the resources in the *project/app* directory. That means you don't have manually require or include it. You are expected to put your application logic in this directory. You can create states in the *project/app* directory or any sub directory another it. How deep they are nested does not matter.
+
+To create a state just create a class under *project/app* directory and extend `Sparors\Ussd\States` class. Because it an abstract class, you have to implement two functions `beforeRendering` and `afterRendering`.
+
+## Meet the Artisan StateCommand {#state-command}
+
+Laravel Ussd comes with an artisan command to quickly scafford state class in the directory of your choice. Just run the following command
+
+```bash
+php artisan ussd:state welcome
+```
+
+This will generate a class called Welcome.php in *app/Http/Ussd* directory. Don't worry is the directory does not exist, it will be created for you.
+
+### Why in *app/Http/Ussd* {#state-directory}
+
+That is the default root directory specified in *config/ussd.php*. If that configuration file does not exist, you can publish it, [see](../installation#installation-config).
+
+To change the default directory to *app/Ussd* change the *class_namespace* variable in the configuration to `App\\Ussd` before running the command.
+
+### Nested Classes {#state-nesting}
+
+Your default namespace is *app/Http/Ussd* but you want some classes nested. No need to be changing configurations. For example if you want to create Amount.php state class in *app/Http/Ussd/Airtime*. Just specify the relative path like this:
+
+```bash
+php artisan ussd:state airtime/amount
+```
+
+### Why are the directory and class starting with caps. {#state-directory-convention}
+
+Take a good look are the file structure in app. That the format they all use. It simple convention and we ensure you stick with that, so if enter airtime/amount for Airtime/Amount, we just fix that for you. Isn't it cool ?
