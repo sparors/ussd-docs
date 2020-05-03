@@ -1,24 +1,16 @@
 ---
-title: Creating States
-description: Quickly Scafford States
+title: Manipulating Data
+description: Make your ussd statefull
 extends: _layouts.documentation
 section: content
 ---
-# Creating Menus {#creating-menus}
+# Manipulating Data {#manipulating-data}
 
-Menus are created in the state class. The state class has a $menu property which is an instance of `Sparors\Ussd\Menu`. The class provide you with simple api to create common menus.
+The ussd state class has a property $record which is an instance of `Sparors\Ussd\Record` class. This will help you save, update, retrieve or delete data when the need arises.
 
-## Available Methods
+## Saving Data
 
-- text
-- line
-- lineBreak
-- listing
-- paginateListing
-
-### text
-
-*text* method appends a given text to the menu
+To save data use the set method of the record class.
 
 ```php
 <?php
@@ -31,114 +23,103 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this->menu->text('Hello World');
+        $this->record->set('visited_record', true);
     }
 
     protected function afterRendering(string $argument): void
     {
-        //
+        $this->record->set('visited_record_again', true);
     }
 }
-
-// 'Hello World'
 ```
 
-### line
+### Saving multiple data
 
-*line* method appends a given text to the menu with line break
+To save multiple data at onces use the setMuliple
 
 ```php
 
-$menu->line('Hello World');
+$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
 
-// "Hello World\n"
 ```
 
-### lineBreak
+#### Automatic Expiration
 
-*lineBreak* appends a line break to the menu.
+Sometimes, you don't want your cache to be filled with stale data. You will want to automatically delete old data. Set the expiration time you want in seconds.
+
 ```php
-$menu->lineBreak();
 
-// "\n"
+$record->set('name' => 'Isaac', 86400); // One day in seconds
 
-$menu->lineBreak(3);
-
-// "\n\n\n"
 ```
 
-### listing
-
-*listing* append an array of items to the menu
-
+You can also use datetime instead
 ```php
-$menu->listing(['Buy Airtime', 'Buy Data']);
 
-// "1.Buy Airtime\n2.Buy Data"
+$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->addDays(7));
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')');
-
-// "1)Buy Airtime\n2)Buy Data"
-
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
-
-// "1)Buy Airtime\n\n2)Buy Data"
-
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
-
-// "a)Buy Airtime\n\nb)Buy Data"
 ```
 
-### paginateListing
+#### Updating Records
 
-*paginateListing* paginates an array of item and append it to the menu
+When you set a record that already exists, the value is overwritten in the cache.
 
 ```php
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
+$record->set('name', 'Tom');
 
-// "1.Buy Airtime\n2.Buy Data"
-
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
-
-// "4)Invest"
-
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
-
-// "3)Pay Bills\n\n4)Invest"
-
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
-
-// "a)Buy Airtime\n\nb)Buy Data"
+$record->set('name', 'Jerry'); // Tom will update to Jerry.
 ```
 
-### Methods can be chained
+## Check Record exist
 
+To check if a record is set and not null, use has method
 ```php
-<?php
-
-namespace App\Http\Ussd;
-
-use Sparors\Ussd\State;
-
-class Welcome extends State
-{
-    protected function beforeRendering(): void
-    {
-        $this->menu->text('Welcome To Paradise')
-            ->lineBreak(2)
-            ->line('Select an option')
-            ->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
-            ->lineBreak(2)
-            ->line('9. Next Page')
-            ->line('#. Back')
-            ->line('Main Menu');
-    }
-
-    protected function afterRendering(string $argument): void
-    {
-        //
-    }
+if ($record->has('name')) {
+    echo "Name Already Set";
+} else {
+    echo "Name Not Set";
 }
+```
 
-// "Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+## Retrieve Data
+
+Simple use get to retrive saved data. Null will be returned when key not found
+
+```php
+$name = $record->get('name');
+
+```
+
+### Retrive Multiple
+
+You can retrieve more than one day at a go.
+
+```php
+[$name, $age] = $record->getMultiple(['name', 'age']);
+```
+
+#### Setting default
+
+Sometimes, you want to get something else when data can not be found instead of null. You can set the default value.
+
+```php
+$name = $record->get('name', 'Ussd User');
+
+[$balanceBefore, $balanceAfter] = $record->getMultiple(['balance_before', 'balance_after'], 0.00);
+```
+
+## Deleting Records
+
+To delete single records use the delete method
+
+```php
+$record->delete('name');
+```
+
+### Delete Multiple
+
+To delete more than one at a time, use setMultiple
+
+```php
+$record->deleteMultiple(['name', 'age']);
 ```

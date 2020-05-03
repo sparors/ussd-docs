@@ -31,7 +31,7 @@ return [
     'Record' => [
         'url' => 'docs/record',
         'children' => [
-            'Saving Data with decision' => 'docs/using-record',
+            'Saving Data with record' => 'docs/using-record',
         ]
     ],
     'Machine' => [

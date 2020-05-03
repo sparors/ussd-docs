@@ -1,42 +1,23 @@
 ---
-title: Menus
-description: Introduction to Menus
+title: Machine
+description: Introduction to Machine
 extends: _layouts.documentation
 section: content
 ---
-# Menus {#menus}
+# Machine {#machine}
 
-What the user see on his phones prompting him/her are refer to as menus. It may be asking a question affirmating an input or even displaying a list of items that you expect the user to choose from.
+After creating the various states and linking them, we know we are done. Now the state class become an interconnected web of nodes. It does not have any idea on it own how to run.
 
-## How is it created ?
+Does it mean we connected them for nothing? Do we need another package? Are we to manually work it how?
 
-Unlike website where you define the content with makeup language. Ussd does not provide you with that luxury. All your menus are to be strings. Does it include list ? Oh yes, everything is expected to be returned as a string.
+The answer is no. Meet Machine, the runner or our application.
 
-## Look at this Example
+## How does it work ?
 
-Suppose you want to create a menu like this:
+When a Ussd Machine is created, it takes some argument which are crusial to run the application. It then does the magic for you while you sit back and relax.
 
-```txt
-Welcome to Paradise
+Machine will take the users request and interpret it. It will then call the necessary state class to hand the request and terminate it afterwards. It responsible for navigating the states with the user.
 
-Select an option
-1. Buy Airtime
-2. Buy Data
-3. Pay Bills
+## Seem complex ?
 
-9. Next Page
-#. Back
-0. Main Menu
-```
-
-You will have to defined it as such
-
-```php
-"Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
-```
-
-## Why need the menu ?
-
-It simple to create the menu right ? Yes. But suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters the phone can display. And that may not be the only list in your application. Hard coding it too will make your application hard to maintain.
-
-Just focus on how you want to menu to look, we take care of the hassle for you.
+Don't worry, it easier than it sound. Let create a machine to prove it.

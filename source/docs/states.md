@@ -1,5 +1,5 @@
 ---
-title: States
+title: State
 description: Introduction to States
 extends: _layouts.documentation
 section: content

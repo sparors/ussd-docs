@@ -1,5 +1,5 @@
 ---
-title: Menus
+title: Menu
 description: Introduction to Menus
 extends: _layouts.documentation
 section: content
