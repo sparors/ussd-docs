@@ -236,18 +236,14 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="installation">Installation</h1>
 
-<p>Laravel Ussd can be installed via composer:</p>
+<p>You can install the package via composer:</p>
 
 <pre><code class="language-bash">composer require sparors/laravel-ussd
 </code></pre>
 
-<p>The package will automatically register a service provider.</p>
-
 <h2 id="installation-config">Publish Configuration</h2>
 
-<p>Laravel Ussd aims for "zero-configuration" out-of-the-box, but we don't want to restrict your freedom.</p>
-
-<p>You can publish Laravel Ussd's config file with the following artisan command:</p>
+<p>Laravel Ussd provides zero configuration out of the box. To publish the config, run the vendor publish command:</p>
 
 <pre><code class="language-bash">php artisan vendor:publish --provider="Sparors\Ussd\UssdServiceProvider" --tag=config
 </code></pre>
@@ -311,11 +307,11 @@ return [
 
 <p>By default new state classes will be created in <em>project/app/Http/Ussd directory</em> with <em>App\Http\Ussd</em> namespace. That can be changed with the <em>class_namespace</em> variable in <strong>ussd/config.php</strong>.</p>
 
-<p>The <em>store</em> variable specify which particular store to use. The list stores can be found in <strong>config/cache.php</strong> under the stores array variable. Leave it at null to use your default cache store.</p>
+<p>The <em>store</em> variable specify which particular store to use. The list can be found in <strong>config/cache.php</strong> under the stores array variable. Leave it at null to use your default cache store.</p>
 
-<p>When using the magic methods of record class to save data <em>(to be spoken of later)</em>, you can not specify the ttl option for the cache, the <em>cache_tll</em> variable sets the default value.</p>
+<p>When using the magic methods of a record class to save data <em>(to be spoken of later)</em>, you can not specify the ttl option for the cache, the <em>cache_tll</em> variable sets the default value.</p>
 
-<p><em>cache_default</em> variable also specify the default value to return when a paricular key can not be found in the cache when accessed using the magic methods of record class <em>(to be spoken of later)</em>.</p>
+<p><em>cache_default</em> variable also specify the default value to return when a paricular key can not be found in the cache when accessed using the magic methods of a record class <em>(to be spoken of later)</em>.</p>
         </div>
     </div>
 </section>

@@ -272,7 +272,7 @@ class Welcome extends State
 
 <h4>Automatic Expiration</h4>
 
-<p>Sometimes, you don't want your cache to be filled with stale data. You will want to automatically delete old data. Set the expiration time you want in seconds.</p>
+<p>Sometimes, you don't want your cache to be filled with state data. You will want to automatically delete the old data. Set the expiration time you want in seconds.</p>
 
 <pre><code class="language-php"><br />$record-&gt;set('name' =&gt; 'Isaac', 86400); // One day in seconds
 
@@ -295,7 +295,7 @@ $record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
 
 <h2>Check Record exist</h2>
 
-<p>To check if a record is set and not null, use has method</p>
+<p>To check if a record is set and not null, use the has method</p>
 
 <pre><code class="language-php">if ($record-&gt;has('name')) {
     echo "Name Already Set";
@@ -306,7 +306,7 @@ $record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
 
 <h2>Retrieve Data</h2>
 
-<p>Simple use get to retrive saved data. Null will be returned when key not found</p>
+<p>Use the get method to retrive saved data. Null will be returned when key not found</p>
 
 <pre><code class="language-php">$name = $record-&gt;get('name');
 

@@ -236,35 +236,40 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="creating-states">Creating States</h1>
 
-<p>Laravel uses PSR-4 autoloading to load all the resources in the <em>project/app</em> directory. That means you don't have manually require or include it. You are expected to put your application logic in this directory. You can create states in the <em>project/app</em> directory or any sub directory another it. How deep they are nested does not matter.</p>
+<p>Laravel uses PSR-4 autoloading to load all the resources in the <em>project/app</em> directory. That means you don't have to manually require or include it. You are expected to put your application logic in this directory. You can create states in the <em>project/app</em> directory or under any sub directory. How deep they are nested does not matter.</p>
 
-<p>To create a state just create a class under <em>project/app</em> directory and extend <code>Sparors\Ussd\States</code> class. Because it an abstract class, you have to implement two functions <code>beforeRendering</code> and <code>afterRendering</code>.</p>
+<h2 id="state-command">Meet the Artisan State Command</h2>
 
-<h2 id="state-command">Meet the Artisan StateCommand</h2>
+<p>We provide a ussd artisan command which allows you to quickly create new states.</p>
 
-<p>Laravel Ussd comes with an artisan command to quickly scafford state class in the directory of your choice. Just run the following command</p>
-
-<pre><code class="language-bash">php artisan ussd:state welcome
+<pre><code class="language-bash">php artisan ussd:state Welcome
 </code></pre>
 
-<p>This will generate a class called Welcome.php in <em>app/Http/Ussd</em> directory. Don't worry is the directory does not exist, it will be created for you.</p>
+<p>This will generate a class called Welcome.php in <em>app/Http/Ussd</em> directory. If the directory does not exist, it will be created for you.</p>
 
 <h3 id="state-directory">Why in <em>app/Http/Ussd</em></h3>
 
-<p>That is the default root directory specified in <em>config/ussd.php</em>. If that configuration file does not exist, you can publish it, <a href="../installation#installation-config">see</a>.</p>
+<p>That is the default root directory specified in <em>config/ussd.php</em>. If the configuration file does not exist, you can publish it, <a href="../installation#installation-config">see</a>.</p>
 
 <p>To change the default directory to <em>app/Ussd</em> change the <em>class_namespace</em> variable in the configuration to <code>App\\Ussd</code> before running the command.</p>
 
-<h3 id="state-nesting">Nested Classes</h3>
+<h3 id="state-nesting">Nested States</h3>
 
-<p>Your default namespace is <em>app/Http/Ussd</em> but you want some classes nested. No need to be changing configurations. For example if you want to create Amount.php state class in <em>app/Http/Ussd/Airtime</em>. Just specify the relative path like this:</p>
+<p>Your default namespace is <em>app/Http/Ussd</em> but you want some states nested. No need to be changing configurations. For example, if you want to create Amount.php state class in <em>app/Http/Ussd/Airtime</em>. Just specify the relative path like this:</p>
+
+<p>Linux/Unix</p>
 
 <pre><code class="language-bash">php artisan ussd:state airtime/amount
 </code></pre>
 
+<p>Windows</p>
+
+<pre><code class="language-bash">php artisan ussd:state airtime\amount
+</code></pre>
+
 <h3 id="state-directory-convention">Why are the directory and class starting with caps.</h3>
 
-<p>Take a good look are the file structure in app. That the format they all use. It simple convention and we ensure you stick with that, so if enter airtime/amount for Airtime/Amount, we just fix that for you. Isn't it cool ?</p>
+<p>Take a good look are the file structure in app. That the format they all use. It simple convention and we ensure you stick with that, so if enter airtime/amount for Airtime/Amount, we just fix that for you. Isn't it cool?</p>
         </div>
     </div>
 </section>

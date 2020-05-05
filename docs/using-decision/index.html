@@ -362,26 +362,26 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this-&gt;menu-&gt;text('Welcome To Paradise')
-            -&gt;lineBreak(2)
-            -&gt;line('Select an option')
-            -&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
-            -&gt;lineBreak(2)
-            -&gt;line('9. Next Page')
-            -&gt;line('#. Back')
-            -&gt;line('Main Menu');
+        $this-&gt;menu-&gt;text('Welcome To Laravel Ussd')
+                   -&gt;lineBreak(2)
+                   -&gt;line('Select an option')
+                   -&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
+                   -&gt;lineBreak(2)
+                   -&gt;line('9. Next Page')
+                   -&gt;line('#. Back')
+                   -&gt;line('Main Menu');
     }
 
     protected function afterRendering(string $argument): void
     {
         $this-&gt;decision-&gt;equal('1', Airtime::class)
-            -&gt;between(2, 4, Payment::class)
-            -&gt;in(['9', '#'], Wait::class)
-            -&gt;any(Error::class);
+                       -&gt;between(2, 4, Payment::class)
+                       -&gt;in(['9', '#'], Wait::class)
+                       -&gt;any(Error::class);
     }
 }
 
-// "Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+// "Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 </code></pre>
         </div>
     </div>
