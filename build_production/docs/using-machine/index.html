@@ -236,16 +236,16 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="creating-machince">Creating Machine</h1>
 
-<p>Typically, you will create a machine in a controller or in your routes file.</p>
+<p>Typically, machines are created in a controller or in your routes file.</p>
 
-<p>Use the Ussd Facade and call the function machine. That all.</p>
+<p>Use the Ussd Facade and call the function machine. That's all it takes.</p>
 
 <pre><code class="language-php">Ussd::machine();
 </code></pre>
 
 <h2>Session id</h2>
 
-<p>Machine Requires a session id to work. you can set it on the machine call like this.</p>
+<p>Machine Requires a session id to work. You can set it on the machine call like this.</p>
 
 <pre><code class="language-php">Ussd::machine()-&gt;setSessionId($request-&gt;session_id);
 </code></pre>
@@ -331,9 +331,9 @@ Ussd:machine()-&gt;setFromRequest([
 
 <pre><code class="language-php">&lt;?php
 
-use App\Ussd\Welcome;
 use Illuminate\Support\Facades\Route;
 use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\Welcome;
 
 Route::get('/', function () {
     $ussd = Ussd::machine()
@@ -367,9 +367,9 @@ Route::get('/', function () {
 
 <pre><code class="language-php">&lt;?php
 
-use App\Ussd\Welcome;
 use Illuminate\Support\Facades\Route;
 use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\Welcome;
 
 Route::get('/', function () {
     $ussd = Ussd::machine()

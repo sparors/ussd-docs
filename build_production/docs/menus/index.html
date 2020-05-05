@@ -236,17 +236,17 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="menus">Menus</h1>
 
-<p>What the user see on his phones prompting him/her are refer to as menus. It may be asking a question affirmating an input or even displaying a list of items that you expect the user to choose from.</p>
+<p>Menus are two-way flash messages; the user opens a menu and picks from a set number of options. Ideal for surveys, votes and customer feedback. Menus can be both menus and responses without the user needing to download a mobile application to interact.</p>
 
-<h2>How is it created ?</h2>
+<h2>How is it created?</h2>
 
-<p>Unlike website where you define the content with makeup language. Ussd does not provide you with that luxury. All your menus are to be strings. Does it include list ? Oh yes, everything is expected to be returned as a string.</p>
+<p>Unlike a website where you define the content with a makeup language. Ussd does not provide you with that luxury. All your menus are strings including lists.</p>
 
-<h2>Look at this Example</h2>
+<h2>Example</h2>
 
 <p>Suppose you want to create a menu like this:</p>
 
-<pre><code class="language-txt">Welcome to Paradise
+<pre><code class="language-txt">Welcome to Laravel Ussd
 
 Select an option
 1. Buy Airtime
@@ -260,14 +260,14 @@ Select an option
 
 <p>You will have to defined it as such</p>
 
-<pre><code class="language-php">"Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+<pre><code class="language-php">"Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 </code></pre>
 
-<h2>Why need the menu ?</h2>
+<h2>Why need the menu?</h2>
 
-<p>It simple to create the menu right ? Yes. But suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters the phone can display. And that may not be the only list in your application. Hard coding it too will make your application hard to maintain.</p>
+<p>Suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters the phone can display. That may not be the only list in your application. Hard coding will make your application hard to maintain.</p>
 
-<p>Just focus on how you want to menu to look, we take care of the hassle for you.</p>
+<p>Just focus on how you want your menu to look, we take care of the hassle for you.</p>
         </div>
     </div>
 </section>
