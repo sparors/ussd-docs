@@ -1,6 +1,6 @@
 ---
 title: Requirements
-description: Dependencies need to succcessly use library
+description: Dependencies need to succcessly use package
 extends: _layouts.documentation
 section: content
 ---
@@ -8,13 +8,13 @@ section: content
 
 Laravel Ussd Package requires **PHP 7.2+** and **Laravel 5.5.0+**
 
-This package uses Laravel Cache to store data. This means the type of cache to use depends on your application's need, personal preferences or server restriction. Extending the cache to use other drivers will still work with the library.
+This package uses Laravel Cache to store data. This means, the type of cache to use depends on your application's need, personal preferences or server restrictions. Extending the cache to use other drivers will still work with the package.
 
 ## Cache Requirements {#cache-requirements}
 
 ### Database {#cache-requirements-database}
 
-To use the database cache, ensure that the extensions required for the chosen database is installed and enabled. Laravel Current supports 4 databases MySql, PostgreSQL, SQLite and SQL Server.
+To use the database cache, ensure that the following extensions required for the chosen database is installed and enabled. Laravel supports 4 databases: MySql, PostgreSQL, SQLite and SQL Server.
 
 Create the following schema in your database.
 

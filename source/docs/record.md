@@ -6,12 +6,12 @@ section: content
 ---
 # Record {#record}
 
-Record helps to save data for a particular request. It ties it self with the request id since every new session has  different session id. Data can be save on any state and retrieve on another state provided they have the same session id.
+Every new session has different a session id. Record helps to save data for a particular request since it ties it self with the request id. Data can be saved on any state and retrieved on another state provided they have the same session id.
 
-## How it works ?
+## How it works?
 
-Record connects with the cache of your choice and saves the data over there. Since caches are faster than database, they help to speed up the response time of ussd since the ussd gateway has will timeout if response delays. The unique identifier to your store is the session id, when it not set, an exception will be thrown.
+Record connects with the cache of your choice and saves the data to cache. Since caches are faster than databases, they help to speed up the response time of ussd applications since the ussd gateway timeout if response delays. The unique identifier to your store is the session id, when it is not set, an exception will be thrown.
 
-## Why need the record ?
+## Why the need for record?
 
-It normally not possible to take data from users with just a state. You will have to have a series of states presented as a form that the user fill. Data collected during that time will have to be saved and used at a later date, hence the need for the record.
+It is impossible to collect data from users with just a state. You will have to have a series of states presented as a form that the user can fill. Data collected will have to be saved and used at a later date, hence the need for the record.

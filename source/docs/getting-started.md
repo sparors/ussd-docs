@@ -7,6 +7,6 @@ section: content
 
 # Getting Started {#getting-started}
 
-Laravel Ussd is a package for Laravel Applications. It takes away the pain you go through to manage and set up ussd to work with Laravel.
+Laravel Ussd is a package for building ussd applications with Laravel. It provides the best of both worlds - high developer productivity and high application performance.
 
-With few lines of code, you can get a good structed project which is easy to maintain as well.
+The guides that you are currently looking at provide an overview of all parts that make Laravel Ussd.

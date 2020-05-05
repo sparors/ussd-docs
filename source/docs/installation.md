@@ -6,19 +6,15 @@ section: content
 ---
 # Installation {#installation}
 
-Laravel Ussd can be installed via composer:
+You can install the package via composer:
 
 ```bash
 composer require sparors/laravel-ussd
 ```
 
-The package will automatically register a service provider.
-
 ## Publish Configuration {#installation-config}
 
-Laravel Ussd aims for "zero-configuration" out-of-the-box, but we don't want to restrict your freedom.
-
-You can publish Laravel Ussd's config file with the following artisan command:
+Laravel Ussd provides zero configuration out of the box. To publish the config, run the vendor publish command:
 
 ```bash
 php artisan vendor:publish --provider="Sparors\Ussd\UssdServiceProvider" --tag=config
@@ -84,8 +80,8 @@ return [
 
 By default new state classes will be created in *project/app/Http/Ussd directory* with *App\Http\Ussd* namespace. That can be changed with the *class_namespace* variable in **ussd/config.php**.
 
-The *store* variable specify which particular store to use. The list stores can be found in **config/cache.php** under the stores array variable. Leave it at null to use your default cache store.
+The *store* variable specify which particular store to use. The list can be found in **config/cache.php** under the stores array variable. Leave it at null to use your default cache store.
 
-When using the magic methods of record class to save data *(to be spoken of later)*, you can not specify the ttl option for the cache, the *cache_tll* variable sets the default value.
+When using the magic methods of a record class to save data *(to be spoken of later)*, you can not specify the ttl option for the cache, the *cache_tll* variable sets the default value.
 
-*cache_default* variable also specify the default value to return when a paricular key can not be found in the cache when accessed using the magic methods of record class *(to be spoken of later)*.
+*cache_default* variable also specify the default value to return when a paricular key can not be found in the cache when accessed using the magic methods of a record class *(to be spoken of later)*.
