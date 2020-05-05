@@ -141,24 +141,24 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this->menu->text('Welcome To Paradise')
-            ->lineBreak(2)
-            ->line('Select an option')
-            ->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
-            ->lineBreak(2)
-            ->line('9. Next Page')
-            ->line('#. Back')
-            ->line('Main Menu');
+        $this->menu->text('Welcome To Laravel Ussd')
+                   ->lineBreak(2)
+                   ->line('Select an option')
+                   ->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
+                   ->lineBreak(2)
+                   ->line('9. Next Page')
+                   ->line('#. Back')
+                   ->line('Main Menu');
     }
 
     protected function afterRendering(string $argument): void
     {
         $this->decision->equal('1', Airtime::class)
-            ->between(2, 4, Payment::class)
-            ->in(['9', '#'], Wait::class)
-            ->any(Error::class);
+                       ->between(2, 4, Payment::class)
+                       ->in(['9', '#'], Wait::class)
+                       ->any(Error::class);
     }
 }
 
-// "Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+// "Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 ```

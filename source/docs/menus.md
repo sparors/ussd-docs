@@ -6,18 +6,18 @@ section: content
 ---
 # Menus {#menus}
 
-What the user see on his phones prompting him/her are refer to as menus. It may be asking a question affirmating an input or even displaying a list of items that you expect the user to choose from.
+Menus are two-way flash messages; the user opens a menu and picks from a set number of options. Ideal for surveys, votes and customer feedback. Menus can be both menus and responses without the user needing to download a mobile application to interact.
 
-## How is it created ?
+## How is it created?
 
-Unlike website where you define the content with makeup language. Ussd does not provide you with that luxury. All your menus are to be strings. Does it include list ? Oh yes, everything is expected to be returned as a string.
+Unlike a website where you define the content with a makeup language. Ussd does not provide you with that luxury. All your menus are strings including lists.
 
-## Look at this Example
+## Example
 
 Suppose you want to create a menu like this:
 
 ```txt
-Welcome to Paradise
+Welcome to Laravel Ussd
 
 Select an option
 1. Buy Airtime
@@ -32,11 +32,11 @@ Select an option
 You will have to defined it as such
 
 ```php
-"Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+"Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 ```
 
-## Why need the menu ?
+## Why need the menu?
 
-It simple to create the menu right ? Yes. But suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters the phone can display. And that may not be the only list in your application. Hard coding it too will make your application hard to maintain.
+Suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters the phone can display. That may not be the only list in your application. Hard coding will make your application hard to maintain.
 
-Just focus on how you want to menu to look, we take care of the hassle for you.
+Just focus on how you want your menu to look, we take care of the hassle for you.

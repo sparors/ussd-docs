@@ -45,7 +45,7 @@ $record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
 
 #### Automatic Expiration
 
-Sometimes, you don't want your cache to be filled with stale data. You will want to automatically delete old data. Set the expiration time you want in seconds.
+Sometimes, you don't want your cache to be filled with state data. You will want to automatically delete the old data. Set the expiration time you want in seconds.
 
 ```php
 
@@ -72,7 +72,8 @@ $record->set('name', 'Jerry'); // Tom will update to Jerry.
 
 ## Check Record exist
 
-To check if a record is set and not null, use has method
+To check if a record is set and not null, use the has method
+
 ```php
 if ($record->has('name')) {
     echo "Name Already Set";
@@ -83,7 +84,7 @@ if ($record->has('name')) {
 
 ## Retrieve Data
 
-Simple use get to retrive saved data. Null will be returned when key not found
+Use the get method to retrive saved data. Null will be returned when key not found
 
 ```php
 $name = $record->get('name');

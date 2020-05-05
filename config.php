@@ -6,7 +6,7 @@ return [
     'baseUrl' => '',
     'production' => false,
     'siteName' => 'Laravel Ussd',
-    'siteDescription' => 'Create ussds with ease',
+    'siteDescription' => 'Peace-of-mind from prototype to production',
 
     // Algolia DocSearch credentials
     'docsearchApiKey' => '',

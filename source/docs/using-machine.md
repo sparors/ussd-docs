@@ -6,9 +6,9 @@ section: content
 ---
 # Creating Machine {#creating-machince}
 
-Typically, you will create a machine in a controller or in your routes file.
+Typically, machines are created in a controller or in your routes file.
 
-Use the Ussd Facade and call the function machine. That all.
+Use the Ussd Facade and call the function machine. That's all it takes.
 
 ```php
 Ussd::machine();
@@ -16,7 +16,7 @@ Ussd::machine();
 
 ## Session id
 
-Machine Requires a session id to work. you can set it on the machine call like this.
+Machine Requires a session id to work. You can set it on the machine call like this.
 
 ```php
 Ussd::machine()->setSessionId($request->session_id);
@@ -63,6 +63,7 @@ Ussd::machine()->setPhoneNumber($request->phone_number)->setNetworkFromRequest('
 ```
 
 ## Rarameters can be set at once
+
 ```php
 Ussd:machine()->set([
     'phone_number' => $request->phone_number,
@@ -110,9 +111,9 @@ The machine will generate an array as the out put with two property `message` an
 ```php
 <?php
 
-use App\Ussd\Welcome;
 use Illuminate\Support\Facades\Route;
 use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\Welcome;
 
 Route::get('/', function () {
     $ussd = Ussd::machine()
@@ -146,9 +147,9 @@ Don't worry, we know you can not tell your ussd operator to change their structu
 ```php
 <?php
 
-use App\Ussd\Welcome;
 use Illuminate\Support\Facades\Route;
 use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\Welcome;
 
 Route::get('/', function () {
     $ussd = Ussd::machine()

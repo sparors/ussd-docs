@@ -56,7 +56,7 @@ $menu->line('Hello World');
 
 ### lineBreak
 
-*lineBreak* appends a line break to the menu.
+*lineBreak* method appends a line break to the menu.
 ```php
 $menu->lineBreak();
 
@@ -69,7 +69,7 @@ $menu->lineBreak(3);
 
 ### listing
 
-*listing* append an array of items to the menu
+*listing* method appends an array of items to the menu
 
 ```php
 $menu->listing(['Buy Airtime', 'Buy Data']);
@@ -91,7 +91,7 @@ $menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 
 ### paginateListing
 
-*paginateListing* paginates an array of item and append it to the menu
+*paginateListing* method paginates an array of item and append it to the menu
 
 ```php
 $menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
@@ -124,7 +124,7 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this->menu->text('Welcome To Paradise')
+        $this->menu->text('Welcome To Lravel Ussd')
             ->lineBreak(2)
             ->line('Select an option')
             ->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
@@ -140,5 +140,5 @@ class Welcome extends State
     }
 }
 
-// "Welcome to Paradise\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+// "Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 ```

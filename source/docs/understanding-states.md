@@ -31,8 +31,8 @@ class Welcome extends State
 
 ## The *beforeRendering* Method {#before-rendering-method}
 
-In this method provides you with the opportunity to design your menu. You can decide to save some data and retrieve it later if there is a need.
+This method is where ussd menus are constructed. You can perform other functions like saving data and retrieving it for later use.
 
 ## The *afterRendering* Method {#after-rendering-method}
 
-This primary purpose if the method is the given you the privilege to specify which state the user should see next after examining his input, The input is the param string argument passed to the method.
+This primary purpose of this method is to given you the privilege to specify which state the user should see next after examining his input. The input is the param string argument passed to the method.
