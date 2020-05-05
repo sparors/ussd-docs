@@ -124,7 +124,7 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this->menu->text('Welcome To Lravel Ussd')
+        $this->menu->text('Welcome To Laravel Ussd')
             ->lineBreak(2)
             ->line('Select an option')
             ->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 3, '. ')
