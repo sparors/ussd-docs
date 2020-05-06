@@ -35,4 +35,4 @@ This method is where ussd menus are constructed. You can perform other functions
 
 ## The *afterRendering* Method {#after-rendering-method}
 
-This primary purpose of this method is to given you the privilege to specify which state the user should see next after examining his input. The input is the param string argument passed to the method.
+The primary purpose of this method is for you to specify which state the user should see next after examining his/her input. The input is the param string argument passed to the method.
