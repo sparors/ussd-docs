@@ -6,7 +6,7 @@ section: content
 ---
 # Creating Links with decision {#using-decision}
 
-A decision instance is already provided in the state class. There is a $decision property, an instance of `Sparors\Ussd\Menu`. The class provide you with simple and needed functions for selecting the next class.
+A decision instance is already provided in the state class. There is a $decision property, an instance of `Sparors\Ussd\Menu`. The class provides you with simple and needed functions for selecting the next class.
 
 ## Available Methods
 
@@ -23,7 +23,7 @@ A decision instance is already provided in the state class. There is a $decision
 
 ### equal
 
-*equal* method compares the users input and set the output when there match. You can ensure variable type is compare by setting the strict parameter to true.
+*equal* method compares the users input and set the output when they match. You can ensure the variable type is compared by setting the strict parameter to true.
 
 ```php
 <?php
@@ -49,83 +49,75 @@ class Welcome extends State
 
 ### numeric
 
-*numeric* method check is the input is numeric then set the outcome.
+*numeric* method checks if the input is numeric then set the outcome.
 
 ```php
-$decision->numeric(Airtime::class);
+$this->decision->numeric(Airtime::class);
 ```
 
 ### integer
 
-*integer* method check is the input is a integer then set the outcome.
+*integer* method checks if the input is a integer then set the outcome.
 ```php
-$decision->integer(Airtime::class);
+$this->decision->integer(Airtime::class);
 ```
 
 ### amount
 
-*amount* method check is the input is a valid amount then set the outcome
+*amount* method checks if the input is a valid amount then set the outcome
 
 ```php
-$decision->integer(Airtime::class);
+$this->decision->integer(Airtime::class);
 ```
 
 ### length
 
-*length* method check the length of the input with and compares it with an argument and set the output
+*length* method checks the length of the input and compares it with an argument and set the output
 
 ```php
-$decision->length('5', Airtime::class);
+$this->decision->length('5', Airtime::class);
 ```
 
 ### phoneNumber
 
-*phoneNumber* method check the  the input is a valid phoneNumer and set the output
+*phoneNumber* method checks if the input is a valid phoneNumer and set the output
 
 ```php
-$decision->phoneNumber(Airtime::class);
+$this->decision->phoneNumber(Airtime::class);
 ```
 
 ### between
 
-*between* method check if the input is in a specified range and set the output
+*between* method checks if the input is in a specified range and set the output
 
 ```php
-$decision->between(1, 10, Airtime::class);
-```
-
-### between
-
-*between* method check if the input is in a specified range and set the output
-
-```php
-$decision->between(1, 10, Airtime::class);
+$this->decision->between(1, 10, Airtime::class);
 ```
 
 ### in
 
-*in* method check if the input is in a given array and set the output
+*in* method checks if the input is in a given array and set the output
 
 ```php
-$decision->in([2, 4, 6, 8, 10], Airtime::class);
+$this->decision->in([2, 4, 6, 8, 10], Airtime::class);
 ```
 
 ### custom
 
-*custom* method check allows you to execute a callable which accepts one argument which will be the users input
+*custom* method allows you to execute a callable which accepts one argument which will be the users input
 
 ```php
-$decision->custom(function ($user_input) {
+$this->decision->custom(function ($user_input) {
     return is_string($user_input) && substr($user_input,0, 4) === 'http';
 }, Airtime::class);
 ```
 
 ### any
 
-*any* method simple set the output
+*any* method simply sets the output
 
 ```php
-$decision->any(Airtime::class);
+$this->decision->any(Airtime::class);
 ```
 
 ### Methods can be chained
