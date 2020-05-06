@@ -35,7 +35,7 @@ You will have to define it as such
 "Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
 ```
 
-## Why menu?
+## Why the need for menu?
 
 Suppose you are getting the list from an API, you have to get the list, loop and append to the string. Don't forget you may have to paginate since there is a limit to the number of characters a phone can display. That may not be the only list in your application. Hard coding will make your application harder to maintain.
 
