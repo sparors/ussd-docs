@@ -20,19 +20,15 @@ Machine Requires a session id to work. You can set it on the machine call like t
 
 ```php
 Ussd::machine()->setSessionId($request->session_id);
-```
 
-### Session id from request
+// or
 
-You may want to set the session id straight for the request with having to use a request object. To achieve this, call setSessionIdFromRequest and specify the request key.
-
-```php
-Ussd::machine()->setSessionIdFromRequest('sesssio_id');
+Ussd::machine()->setSessionIdFromRequest('sesssion_id');
 ```
 
 ## UserInput
 
-Another important variable is the Input from the user. That too can be set like the session id.
+Another important variable is user input. You can set it like this.
 
 ```php
 Ussd::machine()->setInput($request->user_input);
@@ -65,7 +61,7 @@ Ussd::machine()->setPhoneNumber($request->phone_number)->setNetworkFromRequest('
 ## Rarameters can be set at once
 
 ```php
-Ussd:machine()->set([
+Ussd::machine()->set([
     'phone_number' => $request->phone_number,
     'network' => $request->operatorNetwork,
     'session_id' => $request->sessionID,
@@ -80,7 +76,7 @@ Ussd:machine()->set([
     there is no need to use associative array.
     on the value is enough.
 */
-Ussd:machine()->setFromRequest([
+Ussd::machine()->setFromRequest([
     'phone_number',
     'input' => 'user_input',
     'network',
@@ -90,23 +86,23 @@ Ussd:machine()->setFromRequest([
 
 ## Choose cache store
 
-When you don't specify the cache store, the store variable in *config/ussd.php* is used. When specified the machine uses the specified one. But you can override that with setStore.
+When you don't specify the cache store, the store variable in *config/ussd.php* is used. When not specified, the machine uses the specified one. But you can override that with setStore.
 
 ```php
-Ussd:machine()->setStore('redis');
+Ussd::machine()->setStore('redis');
 ```
 
 ## Initial State
 
-The machine can not run without tell it where to start from. When you do, don't worry. You don't need to tell it of the other states, it will automatically know and work accordingly.
+The machine can not run without tell it where to start from. Import a state class of your choice and pass it to the setInitialState method
 
 ```php
-Ussd:machine()->setInitialState(Welcome::class);
+Ussd::machine()->setInitialState(Welcome::class);
 ```
 
 ## Output of the machine
 
-The machine will generate an array as the out put with two property `message` and `code`. The message is the string to be responsed to the mobile operator and the code show waether to provide an input or not to the user.
+The machine generates an array as output with two properties `message` and `code`. The message is title of the menu/page displayed to the user and the code determines how a page will be displayed to the user.
 
 ```php
 <?php
@@ -139,10 +135,9 @@ Route::get('/', function () {
 
 > NB: code 1 for input, 2 for no input.
 
-## what ! my operatory does not understand that response
+## What if my operatory does not understand that response?
 
-Don't worry, we know you can not tell your ussd operator to change their structure just to make your application work. You can set how to responsed to your operator by using a callable. Below is an example.
-
+Don't worry, we know you can not tell your ussd operator to change their structure just to make your application work. You can set how to responsed to your operator by using a callable. See the example below.
 
 ```php
 <?php
