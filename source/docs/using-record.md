@@ -23,12 +23,12 @@ class Welcome extends State
 {
     protected function beforeRendering(): void
     {
-        $this->record->set('visited_record', true);
+        $this->record->get('amount');
     }
 
     protected function afterRendering(string $argument): void
     {
-        $this->record->set('visited_record_again', true);
+        $this->record->set('amount', $argument);
     }
 }
 ```
@@ -39,24 +39,25 @@ To save multiple data at onces use the setMuliple
 
 ```php
 
-$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
+$this->record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
 
 ```
 
 #### Automatic Expiration
 
-Sometimes, you don't want your cache to be filled with state data. You will want to automatically delete the old data. Set the expiration time you want in seconds.
+Sometimes, you don't want your cache to be filled with state data. If you want to automatically delete the old data, set the expiration time you want in seconds.
 
 ```php
 
-$record->set('name' => 'Isaac', 86400); // One day in seconds
+$this->record->set('name' => 'Isaac', 86400); // One day in seconds
 
 ```
 
 You can also use datetime instead
+
 ```php
 
-$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->addDays(7));
+$this->record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->addDays(7));
 
 ```
 
@@ -65,9 +66,11 @@ $record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->
 When you set a record that already exists, the value is overwritten in the cache.
 
 ```php
-$record->set('name', 'Tom');
 
-$record->set('name', 'Jerry'); // Tom will update to Jerry.
+$this->record->set('name', 'Tom');
+
+$this->record->set('name', 'Jerry'); // Tom will update to Jerry.
+
 ```
 
 ## Check Record exist
@@ -75,7 +78,7 @@ $record->set('name', 'Jerry'); // Tom will update to Jerry.
 To check if a record is set and not null, use the has method
 
 ```php
-if ($record->has('name')) {
+if ($this->record->has('name')) {
     echo "Name Already Set";
 } else {
     echo "Name Not Set";
@@ -84,10 +87,11 @@ if ($record->has('name')) {
 
 ## Retrieve Data
 
-Use the get method to retrive saved data. Null will be returned when key not found
+Use the get method to retrive saved data. Null will be returned if the key is not found
 
 ```php
-$name = $record->get('name');
+
+$name = $this->record->get('name');
 
 ```
 
@@ -96,7 +100,9 @@ $name = $record->get('name');
 You can retrieve more than one day at a go.
 
 ```php
-[$name, $age] = $record->getMultiple(['name', 'age']);
+
+[$name, $age] = $this->record->getMultiple(['name', 'age']);
+
 ```
 
 #### Setting default
@@ -104,9 +110,11 @@ You can retrieve more than one day at a go.
 Sometimes, you want to get something else when data can not be found instead of null. You can set the default value.
 
 ```php
-$name = $record->get('name', 'Ussd User');
 
-[$balanceBefore, $balanceAfter] = $record->getMultiple(['balance_before', 'balance_after'], 0.00);
+$name = $this->record->get('name', 'Ussd User');
+
+[$balanceBefore, $balanceAfter] = $this->record->getMultiple(['balance_before', 'balance_after'], 0.00);
+
 ```
 
 ## Deleting Records
@@ -114,13 +122,17 @@ $name = $record->get('name', 'Ussd User');
 To delete single records use the delete method
 
 ```php
-$record->delete('name');
+
+$this->record->delete('name');
+
 ```
 
 ### Delete Multiple
 
-To delete more than one at a time, use setMultiple
+To delete more than one record at a time, use setMultiple
 
 ```php
-$record->deleteMultiple(['name', 'age']);
+
+$this->record->deleteMultiple(['name', 'age']);
+
 ```
