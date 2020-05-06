@@ -6,7 +6,7 @@ section: content
 ---
 # Creating Menus {#creating-menus}
 
-Menus are created in the state class. The state class has a $menu property which is an instance of `Sparors\Ussd\Menu`. The class provide you with simple api to create common menus.
+Menus are created in the state class. The state class has a $menu property which is an instance of `Sparors\Ussd\Menu`. The class provides you with a simple api to create common menus.
 
 ## Available Methods
 
@@ -49,7 +49,7 @@ class Welcome extends State
 
 ```php
 
-$menu->line('Hello World');
+$this->menu->line('Hello World');
 
 // "Hello World\n"
 ```
@@ -58,11 +58,11 @@ $menu->line('Hello World');
 
 *lineBreak* method appends a line break to the menu.
 ```php
-$menu->lineBreak();
+$this->menu->lineBreak();
 
 // "\n"
 
-$menu->lineBreak(3);
+$this->menu->lineBreak(3);
 
 // "\n\n\n"
 ```
@@ -72,19 +72,19 @@ $menu->lineBreak(3);
 *listing* method appends an array of items to the menu
 
 ```php
-$menu->listing(['Buy Airtime', 'Buy Data']);
+$this->menu->listing(['Buy Airtime', 'Buy Data']);
 
 // "1.Buy Airtime\n2.Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')');
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')');
 
 // "1)Buy Airtime\n2)Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
 
 // "1)Buy Airtime\n\n2)Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 ```
@@ -94,19 +94,19 @@ $menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 *paginateListing* method paginates an array of item and append it to the menu
 
 ```php
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
 
 // "1.Buy Airtime\n2.Buy Data"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
 
 // "4)Invest"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
 
 // "3)Pay Bills\n\n4)Invest"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 ```
