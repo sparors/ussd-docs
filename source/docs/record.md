@@ -45,7 +45,7 @@ $this->record->set('name', 'Benjamin');
 To save multiple data at onces use the setMuliple
 
 ```php
-$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
+$this->record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50]);
 ```
 
 #### Automatic Expiration {#record-auto-expire}
@@ -55,13 +55,13 @@ You will want to automatically delete the old data.
 Set the expiration time you want in seconds.
 
 ```php
-$record->set('name' => 'Isaac', 86400); // One day in seconds
+$this->record->set('name' => 'Isaac', 86400); // One day in seconds
 ```
 
 You can also use datetime instead
 
 ```php
-$record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->addDays(7));
+$this->record->setMultiple(['name' => 'Isaac', 'age' => 17, 'amount' => 3.50], now()->addDays(7));
 ```
 
 #### Saving Data with Magic Method {#record-save-magic}
@@ -71,10 +71,10 @@ The property name will become the key used to save the value in the cache.
 
 ```php
 // single value
-$record->name = 'Timothy';
+$this->record->name = 'Timothy';
 
 // multiple values
-$record(['name' => 'Timothy', 'age' => 17]);
+$this->record(['name' => 'Timothy', 'age' => 17]);
 ```
 
 > NB: The TTL of magic methods are taken from `config/ussd.php`.
@@ -85,9 +85,9 @@ $record(['name' => 'Timothy', 'age' => 17]);
 When you set a record that already exists, the value is overwritten in the cache.
 
 ```php
-$record->set('name', 'Tom');
+$this->record->set('name', 'Tom');
 
-$record->set('name', 'Jerry'); // Tom will update to Jerry.
+$this->record->set('name', 'Jerry'); // Tom will update to Jerry.
 ```
 
 ### Check Data Exist {#record-has-data}
@@ -95,7 +95,7 @@ $record->set('name', 'Jerry'); // Tom will update to Jerry.
 To check if a record is set and not null, use the has method
 
 ```php
-if ($record->has('name')) {
+if ($this->record->has('name')) {
     echo "Name Already Set";
 } else {
     echo "Name Not Set";
@@ -107,7 +107,7 @@ if ($record->has('name')) {
 Use the get method to retrieve saved data. Null will be returned when key not found
 
 ```php
-$name = $record->get('name');
+$name = $this->record->get('name');
 ```
 
 #### Retrieve Multiple Data {#record-retrieve-multiple}
@@ -115,7 +115,7 @@ $name = $record->get('name');
 You can retrieve more than one day at a go.
 
 ```php
-[$name, $age] = $record->getMultiple(['name', 'age']);
+[$name, $age] = $this->record->getMultiple(['name', 'age']);
 ```
 
 #### Setting default {#record-retrieve-default}
@@ -123,9 +123,9 @@ You can retrieve more than one day at a go.
 Sometimes, you want to get something else when data can not be found instead of null. You can set the default value.
 
 ```php
-$name = $record->get('name', 'Ussd User');
+$name = $this->record->get('name', 'Ussd User');
 
-[$balanceBefore, $balanceAfter] = $record->getMultiple(['balance_before', 'balance_after'], 0.00);
+[$balanceBefore, $balanceAfter] = $this->record->getMultiple(['balance_before', 'balance_after'], 0.00);
 ```
 
 #### Retrieve Data with magic method {#record-retrieve-magic}
@@ -134,11 +134,11 @@ You can retrieve data with magic methods using the key of value
 as the property of record.
 
 ```php
-$name = $record->name;
+$name = $this->record->name;
 
 // or 
 
-$age = $record('age');
+$age = $this->record('age');
 ```
 
 > NB: The default value of magic methods are taken from `config/ussd.php`.
@@ -149,7 +149,7 @@ $age = $record('age');
 To delete single records use the delete method
 
 ```php
-$record->delete('name');
+$this->record->delete('name');
 ```
 
 #### Delete Multiple Data {#record-delete-multiple}
@@ -157,5 +157,5 @@ $record->delete('name');
 To delete more than one at a time, use setMultiple
 
 ```php
-$record->deleteMultiple(['name', 'age']);
+$this->record->deleteMultiple(['name', 'age']);
 ```

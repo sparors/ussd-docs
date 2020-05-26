@@ -20,7 +20,7 @@ including lists.
 
 Suppose you want to create a menu like this:
 
-```txt
+```plaintext {.hljs}
 Welcome to Laravel Ussd
 
 Select an option
@@ -57,18 +57,47 @@ which is an instance of `Sparors\Ussd\Menu`. The class provide you with simple a
 
 ## Available Methods {#menu-methods}
 
-- text
-- line
-- lineBreak
-- listing
-- paginateListing
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-text" class="inline-block ml-2">
+            text
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-line" class="inline-block ml-2">
+            line
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-linebreak" class="inline-block ml-2">
+            lineBreak
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-listing" class="inline-block ml-2">
+            listing
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-paginatelisting" class="inline-block ml-2">
+            paginateListing
+        </a>
+    </div>
+</div>
 
 ### text {#menu-method-text}
 
 `text` method appends a given text to the menu
 
 ```php
-$menu->text('Hello World');
+// public function text(string $text): self
+
+$this->menu->text('Hello World');
 
 // 'Hello World'
 ```
@@ -78,7 +107,9 @@ $menu->text('Hello World');
 `line` method appends a given text to the menu with line break
 
 ```php
-$menu->line('Hello World');
+// public function line(string $text): self
+
+$this->menu->line('Hello World');
 
 // "Hello World\n"
 ```
@@ -87,11 +118,13 @@ $menu->line('Hello World');
 
 `lineBreak` method appends a line break to the menu.
 ```php
-$menu->lineBreak();
+// public function lineBreak(int $number = 1): self
+
+$this->menu->lineBreak();
 
 // "\n"
 
-$menu->lineBreak(3);
+$this->menu->lineBreak(3);
 
 // "\n\n\n"
 ```
@@ -101,7 +134,16 @@ $menu->lineBreak(3);
 `listing` method appends an array of items to the menu
 
 ```php
-$menu->listing(['Buy Airtime', 'Buy Data']);
+/*
+public function listing(
+    array $items,
+    string $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
+    string $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
+    string $numbering = self::NUMBERING_NUMERIC
+): self
+*/
+
+$this->menu->listing(['Buy Airtime', 'Buy Data']);
 
 // "1.Buy Airtime\n2.Buy Data"
 
@@ -109,11 +151,11 @@ $menu->listing(['Buy Airtime', 'Buy Data'], ')');
 
 // "1)Buy Airtime\n2)Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
 
 // "1)Buy Airtime\n\n2)Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 ```
@@ -123,19 +165,29 @@ $menu->listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 `paginateListing` method paginates an array of item and append it to the menu
 
 ```php
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
+/*
+public function paginateListing(
+    array $items,
+    int $page = 1,
+    int $numberPerPage = 5,
+    string $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
+    string $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
+    string $numbering = self::NUMBERING_NUMERIC
+): self
+*/
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
 
 // "1.Buy Airtime\n2.Buy Data"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
 
 // "4)Invest"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
 
 // "3)Pay Bills\n\n4)Invest"
 
-$menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
+$this->menu->paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 ```

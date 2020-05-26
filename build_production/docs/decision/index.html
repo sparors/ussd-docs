@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=36bd75733674d1919eaa">
 
             </head>
 
@@ -187,97 +187,166 @@ creating functions for every application you build.</p>
 
 <p>A decision instance is already provided in the state class. There is a <code>$decision</code> property, an instance of <code>Sparors\Ussd\Menu</code>. The class provide you with simple and needed functions for selecting the next class.</p>
 
-<h3>Available Methods</h3>
+<h3 id="decision-methods">Available Methods</h3>
 
-<ul>
-<li>equal</li>
-<li>numeric</li>
-<li>integer</li>
-<li>amount</li>
-<li>length</li>
-<li>phoneNumber</li>
-<li>between</li>
-<li>in</li>
-<li>custom</li>
-<li>any</li>
-</ul>
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-equal" class="inline-block ml-2">
+            equal
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-numeric" class="inline-block ml-2">
+            numeric
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-integer" class="inline-block ml-2">
+            integer
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-amount" class="inline-block ml-2">
+            amount
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-length" class="inline-block ml-2">
+            length
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-phonenumber" class="inline-block ml-2">
+            phoneNumber
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-between" class="inline-block ml-2">
+            between
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-in" class="inline-block ml-2">
+            in
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-custom" class="inline-block ml-2">
+            custom
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-any" class="inline-block ml-2">
+            any
+        </a>
+    </div>
+</div>
 
-<h4>equal</h4>
+<h4 id="decision-method-equal">equal</h4>
 
 <p><code>equal</code> method compares the users input and set the output when there match. You can ensure variable type is compare by setting the strict parameter to true.</p>
 
-<pre><code class="language-php">$this-&gt;decision-&gt;equal('1', Airtime::class);
+<pre><code class="language-php">// public function equal($argument, string $output, bool $strict = false): self
+
+$this-&gt;decision-&gt;equal('1', Airtime::class);
 </code></pre>
 
-<h4>numeric</h4>
+<h4 id="decision-method-numeric">numeric</h4>
 
 <p><code>numeric</code> method check is the input is numeric then set the outcome.</p>
 
-<pre><code class="language-php">$decision-&gt;numeric(Airtime::class);
+<pre><code class="language-php">// public function numeric(string $output): self
+
+$this-&gt;decision-&gt;numeric(Airtime::class);
 </code></pre>
 
-<h4>integer</h4>
+<h4 id="decision-method-integer">integer</h4>
 
 <p><code>integer</code> method check is the input is a integer then set the outcome.</p>
 
-<pre><code class="language-php">$decision-&gt;integer(Airtime::class);
+<pre><code class="language-php">// public function integer(string $output): self
+
+$this-&gt;decision-&gt;integer(Airtime::class);
 </code></pre>
 
-<h4>amount</h4>
+<h4 id="decision-method-amount">amount</h4>
 
 <p><code>amount</code> method check is the input is a valid amount then set the outcome</p>
 
-<pre><code class="language-php">$decision-&gt;integer(Airtime::class);
+<pre><code class="language-php">// public function amount(string $output): self
+
+$this-&gt;decision-&gt;amount(Airtime::class);
 </code></pre>
 
-<h4>length</h4>
+<h4 id="decision-method-length">length</h4>
 
 <p><code>length</code> method check the length of the input with and compares it with an argument and set the output</p>
 
-<pre><code class="language-php">$decision-&gt;length('5', Airtime::class);
+<pre><code class="language-php">// public function length($argument, string $output): self
+
+$this-&gt;decision-&gt;length('5', Airtime::class);
 </code></pre>
 
-<h4>phoneNumber</h4>
+<h4 id="decision-method-phonenumber">phoneNumber</h4>
 
 <p><code>phoneNumber</code> method check the  the input is a valid phoneNumer and set the output</p>
 
-<pre><code class="language-php">$decision-&gt;phoneNumber(Airtime::class);
+<pre><code class="language-php">// public function phoneNumber(string $output): self
+
+$this-&gt;decision-&gt;phoneNumber(Airtime::class);
 </code></pre>
 
-<h4>between</h4>
+<h4 id="decision-method-between">between</h4>
 
 <p><code>between</code> method check if the input is in a specified range and set the output</p>
 
-<pre><code class="language-php">$decision-&gt;between(1, 10, Airtime::class);
+<pre><code class="language-php">// public function between(int $start, int $end, string $output): self
+
+$this-&gt;decision-&gt;between(1, 10, Airtime::class);
 </code></pre>
 
-<h4>in</h4>
+<h4 id="decision-method-in">in</h4>
 
 <p><code>in</code> method check if the input is in a given array and set the output</p>
 
-<pre><code class="language-php">$decision-&gt;in([2, 4, 6, 8, 10], Airtime::class);
+<pre><code class="language-php">// public function in(array $array, string $output, bool $strict = false): self
+
+$this-&gt;decision-&gt;in([2, 4, 6, 8, 10], Airtime::class);
 </code></pre>
 
-<h4>custom</h4>
+<h4 id="decision-method-custom">custom</h4>
 
 <p><code>custom</code> method check allows you to execute a callable which accepts one 
 argument which will be the users input</p>
 
-<pre><code class="language-php">// Checking if input is a url
+<pre><code class="language-php">// public function custom(callable $function, string $output): self
 
-$decision-&gt;custom(function ($user_input) {
+// Checking if input is a url
+$this-&gt;decision-&gt;custom(function ($user_input) {
     return is_string($user_input) &amp;&amp; substr($user_input,0, 4) === 'http';
 }, Airtime::class);
 </code></pre>
 
-<h4>any</h4>
+<h4 id="decision-method-any">any</h4>
 
 <p><code>any</code> method simple set the output no matter the input</p>
 
-<pre><code class="language-php">$decision-&gt;any(Airtime::class);
+<pre><code class="language-php">// public function any(string $output): self
+
+$this-&gt;decision-&gt;any(Airtime::class);
 </code></pre>
 
-<h3>Methods can be chained</h3>
+<h3 id="decision-method-chained">Methods can be chained</h3>
 
 <pre><code class="language-php">&lt;?php
 

@@ -97,13 +97,35 @@ class Welcome extends State
 
 Every state class has the following properties:
 
-- action
-- record
-- menu
-- decision
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#state-property-action" class="inline-block ml-2">
+            action
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../record#record" class="inline-block ml-2">
+            record
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../menu#menus" class="inline-block ml-2">
+            menu
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../decision#decision" class="inline-block ml-2">
+            decision
+        </a>
+    </div>
+</div>
 
 The rest of the property will be explained in a later section apart from
-action.
+`action`.
 
 ### Action {#state-property-action}
 
@@ -131,8 +153,20 @@ class Welcome extends State
 
 State has the following abstract methods
 
-- beforeRendering
-- afterRendering
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#before-rendering-method" class="inline-block ml-2">
+            beforeRendering
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#after-rendering-method" class="inline-block ml-2">
+            afterRendering
+        </a>
+    </div>
+</div>
 
 #### The *beforeRendering* Method {#before-rendering-method}
 

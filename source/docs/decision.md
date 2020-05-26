@@ -22,104 +22,175 @@ creating functions for every application you build.
 
 A decision instance is already provided in the state class. There is a `$decision` property, an instance of `Sparors\Ussd\Menu`. The class provide you with simple and needed functions for selecting the next class.
 
-### Available Methods
+### Available Methods {#decision-methods}
 
-- equal
-- numeric
-- integer
-- amount
-- length
-- phoneNumber
-- between
-- in
-- custom
-- any
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-equal" class="inline-block ml-2">
+            equal
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-numeric" class="inline-block ml-2">
+            numeric
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-integer" class="inline-block ml-2">
+            integer
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-amount" class="inline-block ml-2">
+            amount
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-length" class="inline-block ml-2">
+            length
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-phonenumber" class="inline-block ml-2">
+            phoneNumber
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-between" class="inline-block ml-2">
+            between
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-in" class="inline-block ml-2">
+            in
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-custom" class="inline-block ml-2">
+            custom
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#decision-method-any" class="inline-block ml-2">
+            any
+        </a>
+    </div>
+</div>
 
-#### equal
+#### equal {#decision-method-equal}
 
 `equal` method compares the users input and set the output when there match. You can ensure variable type is compare by setting the strict parameter to true.
 
 ```php
+// public function equal($argument, string $output, bool $strict = false): self
+
 $this->decision->equal('1', Airtime::class);
 ```
 
-#### numeric
+#### numeric {#decision-method-numeric}
 
 `numeric` method check is the input is numeric then set the outcome.
 
 ```php
-$decision->numeric(Airtime::class);
+// public function numeric(string $output): self
+
+$this->decision->numeric(Airtime::class);
 ```
 
-#### integer
+#### integer {#decision-method-integer}
 
 `integer` method check is the input is a integer then set the outcome.
 ```php
-$decision->integer(Airtime::class);
+// public function integer(string $output): self
+
+$this->decision->integer(Airtime::class);
 ```
 
-#### amount
+#### amount {#decision-method-amount}
 
 `amount` method check is the input is a valid amount then set the outcome
 
 ```php
-$decision->integer(Airtime::class);
+// public function amount(string $output): self
+
+$this->decision->amount(Airtime::class);
 ```
 
-#### length
+#### length {#decision-method-length}
 
 `length` method check the length of the input with and compares it with an argument and set the output
 
 ```php
-$decision->length('5', Airtime::class);
+// public function length($argument, string $output): self
+
+$this->decision->length('5', Airtime::class);
 ```
 
-#### phoneNumber
+#### phoneNumber {#decision-method-phonenumber}
 
 `phoneNumber` method check the  the input is a valid phoneNumer and set the output
 
 ```php
-$decision->phoneNumber(Airtime::class);
+// public function phoneNumber(string $output): self
+
+$this->decision->phoneNumber(Airtime::class);
 ```
 
-#### between
+#### between {#decision-method-between}
 
 `between` method check if the input is in a specified range and set the output
 
 ```php
-$decision->between(1, 10, Airtime::class);
+// public function between(int $start, int $end, string $output): self
+
+$this->decision->between(1, 10, Airtime::class);
 ```
 
-#### in
+#### in {#decision-method-in}
 
 `in` method check if the input is in a given array and set the output
 
 ```php
-$decision->in([2, 4, 6, 8, 10], Airtime::class);
+// public function in(array $array, string $output, bool $strict = false): self
+
+$this->decision->in([2, 4, 6, 8, 10], Airtime::class);
 ```
 
-#### custom
+#### custom {#decision-method-custom}
 
 `custom` method check allows you to execute a callable which accepts one 
 argument which will be the users input
 
 ```php
-// Checking if input is a url
+// public function custom(callable $function, string $output): self
 
-$decision->custom(function ($user_input) {
+// Checking if input is a url
+$this->decision->custom(function ($user_input) {
     return is_string($user_input) && substr($user_input,0, 4) === 'http';
 }, Airtime::class);
 ```
 
-#### any
+#### any {#decision-method-any}
 
 `any` method simple set the output no matter the input
 
 ```php
-$decision->any(Airtime::class);
+// public function any(string $output): self
+
+$this->decision->any(Airtime::class);
 ```
 
-### Methods can be chained
+### Methods can be chained {#decision-method-chained}
 
 ```php
 <?php

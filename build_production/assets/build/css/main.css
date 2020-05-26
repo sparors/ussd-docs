@@ -1,110 +1,85 @@
-/* a11y-light theme */
+/*
 
-/* Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css */
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
 
-/* @author: ericwbailey */
-
-/* Comment */
-
-.hljs-comment,
-.hljs-quote {
-  color: #696969;
-}
-
-/* Red */
-
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-  color: #d91e18;
-}
-
-/* Orange */
-
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-  color: #aa5d00;
-}
-
-/* Yellow */
-
-.hljs-attribute {
-  color: #aa5d00;
-}
-
-/* Green */
-
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-  color: #008000;
-}
-
-/* Blue */
-
-.hljs-title,
-.hljs-section {
-  color: #007faa;
-}
-
-/* Purple */
-
-.hljs-keyword,
-.hljs-selector-tag {
-  color: #7928a1;
-}
+*/
 
 .hljs {
   display: block;
   overflow-x: auto;
-  background: #fefefe;
-  color: #545454;
   padding: 0.5em;
+  background: #23241f;
 }
 
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
 .hljs-emphasis {
-  font-style: italic;
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
 }
 
 .hljs-strong {
   font-weight: bold;
 }
 
-@media screen and (-ms-high-contrast: active) {
-  .hljs-addition,
-  .hljs-attribute,
-  .hljs-built_in,
-  .hljs-builtin-name,
-  .hljs-bullet,
-  .hljs-comment,
-  .hljs-link,
-  .hljs-literal,
-  .hljs-meta,
-  .hljs-number,
-  .hljs-params,
-  .hljs-string,
-  .hljs-symbol,
-  .hljs-type,
-  .hljs-quote {
-    color: highlight;
-  }
+.hljs-emphasis {
+  font-style: italic;
+}
 
-  .hljs-keyword,
-    .hljs-selector-tag {
-    font-weight: bold;
-  }
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
 }
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -766,9 +741,6 @@ blockquote {
 }
 
 code {
-  --bg-opacity: 1;
-  background-color: #e2e8f0;
-  background-color: rgba(226, 232, 240, var(--bg-opacity));
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 1px;
@@ -778,8 +750,7 @@ code {
 }
 
 code.hljs {
-  background-color: transparent;
-  padding: 0;
+  padding: 0.5rem;
 }
 
 code.hljs .hljs-comment,
@@ -799,8 +770,8 @@ h6 {
   margin-bottom: 1rem;
   margin-top: 2rem;
   --text-opacity: 1;
-  color: #1a202c;
-  color: rgba(26, 32, 44, var(--text-opacity));
+  color: #2d3748;
+  color: rgba(45, 55, 72, var(--text-opacity));
 }
 
 h1:first-child,
@@ -813,17 +784,17 @@ h6:first-child {
 }
 
 h1 {
-  font-weight: 800;
+  font-weight: 700;
   font-size: 2.625rem;
 }
 
 h2 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 2.125rem;
 }
 
 h3 {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.75rem;
 }
 
@@ -882,13 +853,16 @@ p {
 
 pre {
   --bg-opacity: 1;
-  background-color: #edf2f7;
-  background-color: rgba(237, 242, 247, var(--bg-opacity));
+  background-color: #4299e1;
+  background-color: rgba(66, 153, 225, var(--bg-opacity));
   line-height: 1.75;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   overflow-x: auto;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   border-radius: 0.25rem;
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   font-size: 1rem;

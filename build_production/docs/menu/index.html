@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=36bd75733674d1919eaa">
 
             </head>
 
@@ -185,7 +185,7 @@ including lists.</p>
 
 <p>Suppose you want to create a menu like this:</p>
 
-<pre><code class="language-txt">Welcome to Laravel Ussd
+<pre><code class="language-plaintext hljs">Welcome to Laravel Ussd
 
 Select an option
 1. Buy Airtime
@@ -220,19 +220,46 @@ which is an instance of <code>Sparors\Ussd\Menu</code>. The class provide you wi
 
 <h2 id="menu-methods">Available Methods</h2>
 
-<ul>
-<li>text</li>
-<li>line</li>
-<li>lineBreak</li>
-<li>listing</li>
-<li>paginateListing</li>
-</ul>
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-text" class="inline-block ml-2">
+            text
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-line" class="inline-block ml-2">
+            line
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-linebreak" class="inline-block ml-2">
+            lineBreak
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-listing" class="inline-block ml-2">
+            listing
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#menu-method-paginatelisting" class="inline-block ml-2">
+            paginateListing
+        </a>
+    </div>
+</div>
 
 <h3 id="menu-method-text">text</h3>
 
 <p><code>text</code> method appends a given text to the menu</p>
 
-<pre><code class="language-php">$menu-&gt;text('Hello World');
+<pre><code class="language-php">// public function text(string $text): self
+
+$this-&gt;menu-&gt;text('Hello World');
 
 // 'Hello World'
 </code></pre>
@@ -241,7 +268,9 @@ which is an instance of <code>Sparors\Ussd\Menu</code>. The class provide you wi
 
 <p><code>line</code> method appends a given text to the menu with line break</p>
 
-<pre><code class="language-php">$menu-&gt;line('Hello World');
+<pre><code class="language-php">// public function line(string $text): self
+
+$this-&gt;menu-&gt;line('Hello World');
 
 // "Hello World\n"
 </code></pre>
@@ -250,11 +279,13 @@ which is an instance of <code>Sparors\Ussd\Menu</code>. The class provide you wi
 
 <p><code>lineBreak</code> method appends a line break to the menu.</p>
 
-<pre><code class="language-php">$menu-&gt;lineBreak();
+<pre><code class="language-php">// public function lineBreak(int $number = 1): self
+
+$this-&gt;menu-&gt;lineBreak();
 
 // "\n"
 
-$menu-&gt;lineBreak(3);
+$this-&gt;menu-&gt;lineBreak(3);
 
 // "\n\n\n"
 </code></pre>
@@ -263,7 +294,16 @@ $menu-&gt;lineBreak(3);
 
 <p><code>listing</code> method appends an array of items to the menu</p>
 
-<pre><code class="language-php">$menu-&gt;listing(['Buy Airtime', 'Buy Data']);
+<pre><code class="language-php">/*
+public function listing(
+    array $items,
+    string $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
+    string $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
+    string $numbering = self::NUMBERING_NUMERIC
+): self
+*/
+
+$this-&gt;menu-&gt;listing(['Buy Airtime', 'Buy Data']);
 
 // "1.Buy Airtime\n2.Buy Data"
 
@@ -271,11 +311,11 @@ $menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')');
 
 // "1)Buy Airtime\n2)Buy Data"
 
-$menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
+$this-&gt;menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')', "\n\n");
 
 // "1)Buy Airtime\n\n2)Buy Data"
 
-$menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
+$this-&gt;menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 </code></pre>
@@ -284,19 +324,29 @@ $menu-&gt;listing(['Buy Airtime', 'Buy Data'], ')', "\n\n", 'alphabetic_lower');
 
 <p><code>paginateListing</code> method paginates an array of item and append it to the menu</p>
 
-<pre><code class="language-php">$menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
+<pre><code class="language-php">/*
+public function paginateListing(
+    array $items,
+    int $page = 1,
+    int $numberPerPage = 5,
+    string $numberingSeparator = self::NUMBERING_SEPARATOR_DOT,
+    string $itemsSeparator = self::ITEMS_SEPARATOR_LINE_BREAK,
+    string $numbering = self::NUMBERING_NUMERIC
+): self
+*/
+$this-&gt;menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2);
 
 // "1.Buy Airtime\n2.Buy Data"
 
-$menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
+$this-&gt;menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 3, ')');
 
 // "4)Invest"
 
-$menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
+$this-&gt;menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 2, 2, ')', "\n\n");
 
 // "3)Pay Bills\n\n4)Invest"
 
-$menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
+$this-&gt;menu-&gt;paginateListing(['Buy Airtime', 'Buy Data', 'Pay Bills', 'Invest'], 1, 2, ')', "\n\n", 'alphabetic_lower');
 
 // "a)Buy Airtime\n\nb)Buy Data"
 </code></pre>
