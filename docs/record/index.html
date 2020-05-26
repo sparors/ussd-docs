@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=36bd75733674d1919eaa">
 
             </head>
 
@@ -208,7 +208,7 @@ retrieve or delete data when the need arises.</p>
 
 <p>To save multiple data at onces use the setMuliple</p>
 
-<pre><code class="language-php">$record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50]);
+<pre><code class="language-php">$this-&gt;record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50]);
 </code></pre>
 
 <h4 id="record-auto-expire">Automatic Expiration</h4>
@@ -217,12 +217,12 @@ retrieve or delete data when the need arises.</p>
 You will want to automatically delete the old data.
 Set the expiration time you want in seconds.</p>
 
-<pre><code class="language-php">$record-&gt;set('name' =&gt; 'Isaac', 86400); // One day in seconds
+<pre><code class="language-php">$this-&gt;record-&gt;set('name' =&gt; 'Isaac', 86400); // One day in seconds
 </code></pre>
 
 <p>You can also use datetime instead</p>
 
-<pre><code class="language-php">$record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50], now()-&gt;addDays(7));
+<pre><code class="language-php">$this-&gt;record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50], now()-&gt;addDays(7));
 </code></pre>
 
 <h4 id="record-save-magic">Saving Data with Magic Method</h4>
@@ -231,10 +231,10 @@ Set the expiration time you want in seconds.</p>
 The property name will become the key used to save the value in the cache.</p>
 
 <pre><code class="language-php">// single value
-$record-&gt;name = 'Timothy';
+$this-&gt;record-&gt;name = 'Timothy';
 
 // multiple values
-$record(['name' =&gt; 'Timothy', 'age' =&gt; 17]);
+$this-&gt;record(['name' =&gt; 'Timothy', 'age' =&gt; 17]);
 </code></pre>
 
 <blockquote>
@@ -246,16 +246,16 @@ $record(['name' =&gt; 'Timothy', 'age' =&gt; 17]);
 
 <p>When you set a record that already exists, the value is overwritten in the cache.</p>
 
-<pre><code class="language-php">$record-&gt;set('name', 'Tom');
+<pre><code class="language-php">$this-&gt;record-&gt;set('name', 'Tom');
 
-$record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
+$this-&gt;record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
 </code></pre>
 
 <h3 id="record-has-data">Check Data Exist</h3>
 
 <p>To check if a record is set and not null, use the has method</p>
 
-<pre><code class="language-php">if ($record-&gt;has('name')) {
+<pre><code class="language-php">if ($this-&gt;record-&gt;has('name')) {
     echo "Name Already Set";
 } else {
     echo "Name Not Set";
@@ -266,23 +266,23 @@ $record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
 
 <p>Use the get method to retrieve saved data. Null will be returned when key not found</p>
 
-<pre><code class="language-php">$name = $record-&gt;get('name');
+<pre><code class="language-php">$name = $this-&gt;record-&gt;get('name');
 </code></pre>
 
 <h4 id="record-retrieve-multiple">Retrieve Multiple Data</h4>
 
 <p>You can retrieve more than one day at a go.</p>
 
-<pre><code class="language-php">[$name, $age] = $record-&gt;getMultiple(['name', 'age']);
+<pre><code class="language-php">[$name, $age] = $this-&gt;record-&gt;getMultiple(['name', 'age']);
 </code></pre>
 
 <h4 id="record-retrieve-default">Setting default</h4>
 
 <p>Sometimes, you want to get something else when data can not be found instead of null. You can set the default value.</p>
 
-<pre><code class="language-php">$name = $record-&gt;get('name', 'Ussd User');
+<pre><code class="language-php">$name = $this-&gt;record-&gt;get('name', 'Ussd User');
 
-[$balanceBefore, $balanceAfter] = $record-&gt;getMultiple(['balance_before', 'balance_after'], 0.00);
+[$balanceBefore, $balanceAfter] = $this-&gt;record-&gt;getMultiple(['balance_before', 'balance_after'], 0.00);
 </code></pre>
 
 <h4 id="record-retrieve-magic">Retrieve Data with magic method</h4>
@@ -290,11 +290,11 @@ $record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
 <p>You can retrieve data with magic methods using the key of value
 as the property of record.</p>
 
-<pre><code class="language-php">$name = $record-&gt;name;
+<pre><code class="language-php">$name = $this-&gt;record-&gt;name;
 
 // or 
 
-$age = $record('age');
+$age = $this-&gt;record('age');
 </code></pre>
 
 <blockquote>
@@ -306,14 +306,14 @@ $age = $record('age');
 
 <p>To delete single records use the delete method</p>
 
-<pre><code class="language-php">$record-&gt;delete('name');
+<pre><code class="language-php">$this-&gt;record-&gt;delete('name');
 </code></pre>
 
 <h4 id="record-delete-multiple">Delete Multiple Data</h4>
 
 <p>To delete more than one at a time, use setMultiple</p>
 
-<pre><code class="language-php">$record-&gt;deleteMultiple(['name', 'age']);
+<pre><code class="language-php">$this-&gt;record-&gt;deleteMultiple(['name', 'age']);
 </code></pre>
         </div>
     </div>

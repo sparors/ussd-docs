@@ -26,7 +26,7 @@
                     <!-- Insert analytics code here -->
         
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=36bd75733674d1919eaa">
 
             </head>
 
@@ -258,15 +258,35 @@ class Welcome extends State
 
 <p>Every state class has the following properties:</p>
 
-<ul>
-<li>action</li>
-<li>record</li>
-<li>menu</li>
-<li>decision</li>
-</ul>
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#state-property-action" class="inline-block ml-2">
+            action
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../record#record" class="inline-block ml-2">
+            record
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../menu#menus" class="inline-block ml-2">
+            menu
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="../decision#decision" class="inline-block ml-2">
+            decision
+        </a>
+    </div>
+</div>
 
 <p>The rest of the property will be explained in a later section apart from
-action.</p>
+<code>action</code>.</p>
 
 <h3 id="state-property-action">Action</h3>
 
@@ -293,10 +313,20 @@ class Welcome extends State
 
 <p>State has the following abstract methods</p>
 
-<ul>
-<li>beforeRendering</li>
-<li>afterRendering</li>
-</ul>
+<div class="space-y-1">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#before-rendering-method" class="inline-block ml-2">
+            beforeRendering
+        </a>
+    </div>
+    <div class="flex items-center">
+        <svg class="w-6 h-6 fill-current text-blue-700 bg-blue-200 rounded-full p-1" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+        <a href="#after-rendering-method" class="inline-block ml-2">
+            afterRendering
+        </a>
+    </div>
+</div>
 
 <h4 id="before-rendering-method">The <em>beforeRendering</em> Method</h4>
 
