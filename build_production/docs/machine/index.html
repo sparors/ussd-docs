@@ -25,8 +25,8 @@
         
                     <!-- Insert analytics code here -->
         
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=6f5e2f47827cfb3cc455">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
 
             </head>
 
@@ -70,11 +70,7 @@
             <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/getting-started"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Getting Started
-        </a>
+        <p class="nav-menu__item text-gray-600">GETTING STARTED</p>
     
             
         <ul class="my-0">
@@ -109,126 +105,65 @@
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/states"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            States
-        </a>
+        <p class="nav-menu__item text-gray-600">CORE CONCEPTS</p>
     
             
         <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/creating-states"
+        <a href="/ussd-docs/docs/state"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating States
+            State
         </a>
     
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/understanding-states"
+        <a href="/ussd-docs/docs/menu"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Understanding  States
+            Menu
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/menus"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Menus
-        </a>
-    
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/creating-menus"
+        <a href="/ussd-docs/docs/action"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating Menus
+            Action
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/decision"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Decision
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-decision"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Creating Links with decision
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/record"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Record
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-record"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Saving Data with record
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/machine"
-            class="lvl0  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
         >
             Machine
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-machine"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Running the App
-        </a>
-    
     </li>
     </ul>
-    </li>
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/api"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Api Reference
-        </a>
-    
     </li>
     </ul>
         </nav>
@@ -236,21 +171,208 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="machine">Machine</h1>
 
-<p>After creating the various states and linking them, we are set to launch our ussd application. State classes are now an interconnected web of nodes but does not have any idea on how to run.</p>
+<p>After creating the various states and linking them, we are set to launch our 
+ussd application. State classes are interconnected web of nodes but 
+does not have any idea on how to run.</p>
 
 <p>What do i do next?</p>
 
 <p>Meet Machine, the robust application runner.</p>
 
-<h2>How does it work?</h2>
+<h2 id="machine-how">How does it work?</h2>
 
-<p>Machine takes arguments which are crusial to run the application when created. It does all the magic for you while you sit back and relax.</p>
+<p>Machine takes arguments which are crusial to run the application when created.
+It does all the magic for you while you sit back and relax.</p>
 
-<p>Machine will take the users request and interpret it and call the necessary state class to hand over the request and terminate it afterwards. Machine is responsible for navigating the states with the user.</p>
+<p>Machine will take the users request and interpret it and call the necessary 
+state class to hand over the request and terminate it afterwards. 
+Machine is responsible for navigating the states with the user.</p>
 
-<h2>Seem complex?</h2>
+<h2 id="machine-complex">Seem complex?</h2>
 
 <p>Don't worry, it is easier than it sound. Let's create a machine to prove it.</p>
+
+<h2 id="creating-machine">Creating Machine</h2>
+
+<p>Typically, machines are created in a controller or in your routes file.</p>
+
+<p>Use the Ussd Facade and call the function machine. That's all it takes.</p>
+
+<pre><code class="language-php">&lt;?php
+use Sparors\Ussd\Facade\Ussd;
+
+Ussd::machine();
+</code></pre>
+
+<h3 id="machine-session-id">Session id</h3>
+
+<p>Machine Requires a session id to work. You can set it on the 
+machine call like this.</p>
+
+<pre><code class="language-php">Ussd::machine()-&gt;setSessionId($request-&gt;session_id);
+</code></pre>
+
+<h4 id="machine-session-id-req">Session id from request</h4>
+
+<p>You may want to set the session id straight for the request without having 
+to use a request object. To achieve this, call 
+setSessionIdFromRequest and specify the request key.</p>
+
+<pre><code class="language-php">Ussd::machine()-&gt;setSessionIdFromRequest('sesssion_id');
+</code></pre>
+
+<h3 id="machine-input">User Input</h3>
+
+<p>Another important variable is the Input from the user. That too can be set like the session id.</p>
+
+<pre><code class="language-php">Ussd::machine()-&gt;setInput($request-&gt;user_input);
+
+// or 
+
+Ussd::machine()-&gt;setInputFromRequest('user_input');
+</code></pre>
+
+<h3 id="machine-other-params">Other parameters</h3>
+
+<p>Other parameters like phoneNumber and network are also available to set when needed.</p>
+
+<pre><code class="language-php">Ussd::machine()-&gt;setPhoneNumber($request-&gt;phone_number);
+Ussd::machine()-&gt;setNetwork($request-&gt;network);
+
+// or 
+
+Ussd::machine()-&gt;setPhoneNumberFromRequest('phone_number');
+Ussd::machine()-&gt;setNetworkFromRequest('network');
+</code></pre>
+
+<h3 id="machine-chained">Parameters can be chained</h3>
+
+<pre><code class="language-php">Ussd::machine()-&gt;setPhoneNumber($request-&gt;phone_number)-&gt;setNetworkFromRequest('network');
+</code></pre>
+
+<h3 id="machine-set">Parameters can be set at once</h3>
+
+<pre><code class="language-php">Ussd:machine()-&gt;set([
+    'phone_number' =&gt; $request-&gt;phone_number,
+    'network' =&gt; $request-&gt;operatorNetwork,
+    'session_id' =&gt; $request-&gt;sessionID,
+    'input' =&gt; $request-&gt;user_input,
+]);
+
+// or
+
+/* 
+    Keys are converted to camel-case.
+    The available key options are:
+    phoneNumber, input, network, sessionId
+*/
+Ussd:machine()-&gt;setFromRequest([
+    'phone_number', // Get request with key phone_number and set it as phoneNumber
+    'input' =&gt; 'user_input', // Get request with key user_input and set it as the input
+    'network',
+    'session_id',
+]);
+</code></pre>
+
+<h3 id="machine-store">Choose cache store</h3>
+
+<p>When you don't specify the cache store, the store variable in <em>config/ussd.php</em> is used. When specified the machine uses the specified one. To specify, use <code>setStore</code> method.</p>
+
+<pre><code class="language-php">Ussd:machine()-&gt;setStore('redis');
+</code></pre>
+
+<h3 id="machine-state-init">Initial State</h3>
+
+<p>The machine can not run without tell it where to start from.
+When you do, the other states will be determined from user interraction 
+with the USSD.</p>
+
+<pre><code class="language-php">Ussd:machine()-&gt;setInitialState(Welcome::class);
+</code></pre>
+
+<h3 id="machine-output">Output of the machine</h3>
+
+<p>The machine will generate an array as the out put with two property <code>message</code> and <code>code</code>. The message is the string to be responsed to the mobile operator and the code show weather to provide an input or not to the user.</p>
+
+<pre><code class="language-php">&lt;?php
+
+use Illuminate\Support\Facades\Route;
+use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\States\Welcome;
+
+Route::get('/', function () {
+    $ussd = Ussd::machine()
+        -&gt;setFromRequest([
+            'phone_number',
+            'input' =&gt; 'user_input',
+            'network',
+            'session_id',
+        ])
+        -&gt;setInitialState(Welcome::class);
+
+    return response()-&gt;json($ussd-&gt;run());
+});
+
+/*
+    output
+
+    {
+        "message": "Welcome class over here"
+        "action": "input"
+    }
+*/
+</code></pre>
+
+<blockquote>
+  <p>NB: action <code>'input'</code> for input, <code>'prompt'</code> for no input.</p>
+</blockquote>
+
+<h3 id="machine-out-manupulate">What ! my operatory does not understand that response</h3>
+
+<p>Don't worry, we know you can not tell your ussd operator to change their 
+structure just to make your application work. You can set how to responsed 
+to your operator by using a callable. Below is an example.</p>
+
+<pre><code class="language-php">&lt;?php
+
+use Illuminate\Support\Facades\Route;
+use Sparors\Ussd\Facades\Ussd;
+use App\Http\Ussd\States\Welcome;
+
+Route::get('/', function () {
+    $ussd = Ussd::machine()
+        -&gt;setFromRequest([
+            'phone_number' =&gt; 'msisdn',
+            'input' =&gt; 'msg',
+            'network',
+            'session_id' =&gt; 'UserSessionID',
+        ])
+        -&gt;setInitialState(Welcome::class)
+        -&gt;setResponse(function(string $message, string $action) {
+            return [
+                'USSDResp' =&gt; [
+                    'action' =&gt; $action,
+                    'menus' =&gt; '',
+                    'title' =&gt; $message,
+                ];
+            ];
+        });
+
+    return response()-&gt;json($ussd-&gt;run());
+});
+
+/*
+    output
+
+    {
+        "USSDResp": {
+            "action": "input",
+            "menus": "",
+            "title": "Welcome class over here"
+        }
+    }
+*/
+</code></pre>
         </div>
     </div>
 </section>

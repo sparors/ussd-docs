@@ -3,10 +3,10 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: [
-          'Nunito Sans'
+          'Raleway', 'sans-serif',
         ],
         mono: [
-          'monospace',
+          'Ubuntu Mono', 'monospace'
         ],
       },
       lineHeight: {

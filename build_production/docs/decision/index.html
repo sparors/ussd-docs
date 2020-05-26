@@ -25,8 +25,8 @@
         
                     <!-- Insert analytics code here -->
         
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=6f5e2f47827cfb3cc455">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
 
             </head>
 
@@ -70,11 +70,7 @@
             <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/getting-started"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Getting Started
-        </a>
+        <p class="nav-menu__item text-gray-600">GETTING STARTED</p>
     
             
         <ul class="my-0">
@@ -109,126 +105,65 @@
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/states"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            States
-        </a>
+        <p class="nav-menu__item text-gray-600">CORE CONCEPTS</p>
     
             
         <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/creating-states"
+        <a href="/ussd-docs/docs/state"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating States
+            State
         </a>
     
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/understanding-states"
+        <a href="/ussd-docs/docs/menu"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Understanding  States
+            Menu
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/menus"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Menus
-        </a>
-    
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/creating-menus"
+        <a href="/ussd-docs/docs/action"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating Menus
+            Action
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/decision"
-            class="lvl0  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
         >
             Decision
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-decision"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Creating Links with decision
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/record"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Record
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-record"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Saving Data with record
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/machine"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Machine
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-machine"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Running the App
-        </a>
-    
     </li>
     </ul>
-    </li>
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/api"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Api Reference
-        </a>
-    
     </li>
     </ul>
         </nav>
@@ -236,11 +171,133 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="decision">Decisions</h1>
 
-<p>Users are excepted to input their response when a prompt is displayed to him/her. As a developer, you make decisions based on the users response. You will then navigate him/her to a different state based on the outcome of the decision. This is what decisions help you to do.</p>
+<p>Users are excepted to input their response when a menu is displayed to them 
+provide there is an input field in the state. As a developer, you 
+make decisions based on the users responses. You will then navigate him/her 
+to a different state based on the outcome of the decision. 
+This is what decisions help you to do.</p>
 
-<h2>Why decisions?</h2>
+<h2 id="decisions-why">Why decisions?</h2>
 
-<p>Decisions provide you with common and frequently used logics to navigate to different states. This makes you focus on your applications instead of creating functions for every application you build.</p>
+<p>Decisions provide you with common and frequently used logics to navigate 
+to different states. This makes you focus on your applications instead of 
+creating functions for every application you build.</p>
+
+<h2 id="using-decision">Creating Links with decision</h2>
+
+<p>A decision instance is already provided in the state class. There is a <code>$decision</code> property, an instance of <code>Sparors\Ussd\Menu</code>. The class provide you with simple and needed functions for selecting the next class.</p>
+
+<h3>Available Methods</h3>
+
+<ul>
+<li>equal</li>
+<li>numeric</li>
+<li>integer</li>
+<li>amount</li>
+<li>length</li>
+<li>phoneNumber</li>
+<li>between</li>
+<li>in</li>
+<li>custom</li>
+<li>any</li>
+</ul>
+
+<h4>equal</h4>
+
+<p><code>equal</code> method compares the users input and set the output when there match. You can ensure variable type is compare by setting the strict parameter to true.</p>
+
+<pre><code class="language-php">$this-&gt;decision-&gt;equal('1', Airtime::class);
+</code></pre>
+
+<h4>numeric</h4>
+
+<p><code>numeric</code> method check is the input is numeric then set the outcome.</p>
+
+<pre><code class="language-php">$decision-&gt;numeric(Airtime::class);
+</code></pre>
+
+<h4>integer</h4>
+
+<p><code>integer</code> method check is the input is a integer then set the outcome.</p>
+
+<pre><code class="language-php">$decision-&gt;integer(Airtime::class);
+</code></pre>
+
+<h4>amount</h4>
+
+<p><code>amount</code> method check is the input is a valid amount then set the outcome</p>
+
+<pre><code class="language-php">$decision-&gt;integer(Airtime::class);
+</code></pre>
+
+<h4>length</h4>
+
+<p><code>length</code> method check the length of the input with and compares it with an argument and set the output</p>
+
+<pre><code class="language-php">$decision-&gt;length('5', Airtime::class);
+</code></pre>
+
+<h4>phoneNumber</h4>
+
+<p><code>phoneNumber</code> method check the  the input is a valid phoneNumer and set the output</p>
+
+<pre><code class="language-php">$decision-&gt;phoneNumber(Airtime::class);
+</code></pre>
+
+<h4>between</h4>
+
+<p><code>between</code> method check if the input is in a specified range and set the output</p>
+
+<pre><code class="language-php">$decision-&gt;between(1, 10, Airtime::class);
+</code></pre>
+
+<h4>in</h4>
+
+<p><code>in</code> method check if the input is in a given array and set the output</p>
+
+<pre><code class="language-php">$decision-&gt;in([2, 4, 6, 8, 10], Airtime::class);
+</code></pre>
+
+<h4>custom</h4>
+
+<p><code>custom</code> method check allows you to execute a callable which accepts one 
+argument which will be the users input</p>
+
+<pre><code class="language-php">// Checking if input is a url
+
+$decision-&gt;custom(function ($user_input) {
+    return is_string($user_input) &amp;&amp; substr($user_input,0, 4) === 'http';
+}, Airtime::class);
+</code></pre>
+
+<h4>any</h4>
+
+<p><code>any</code> method simple set the output no matter the input</p>
+
+<pre><code class="language-php">$decision-&gt;any(Airtime::class);
+</code></pre>
+
+<h3>Methods can be chained</h3>
+
+<pre><code class="language-php">&lt;?php
+
+namespace App\Http\Ussd\States;
+
+use Sparors\Ussd\State;
+
+class Welcome extends State
+{
+    protected function afterRendering(string $argument): void
+    {
+        $this-&gt;decision-&gt;equal('1', Airtime::class)
+                       -&gt;between(2, 4, Payment::class)
+                       -&gt;in(['9', '#'], Wait::class)
+                       -&gt;any(Error::class);
+    }
+}
+
+// "Welcome to Laravel Ussd\n\nSelect an option\n1. Buy Airtime\n2. Buy Data\n3. Pay Bills\n\n9. Next Page\n#.Back\n0. Main Menu"
+</code></pre>
         </div>
     </div>
 </section>

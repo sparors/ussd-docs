@@ -25,8 +25,8 @@
         
                     <!-- Insert analytics code here -->
         
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=6f5e2f47827cfb3cc455">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
 
             </head>
 
@@ -70,11 +70,7 @@
             <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/getting-started"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Getting Started
-        </a>
+        <p class="nav-menu__item text-gray-600">GETTING STARTED</p>
     
             
         <ul class="my-0">
@@ -109,126 +105,65 @@
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/states"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            States
-        </a>
+        <p class="nav-menu__item text-gray-600">CORE CONCEPTS</p>
     
             
         <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/creating-states"
+        <a href="/ussd-docs/docs/state"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating States
+            State
         </a>
     
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/understanding-states"
+        <a href="/ussd-docs/docs/menu"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Understanding  States
+            Menu
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/menus"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Menus
-        </a>
-    
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/creating-menus"
+        <a href="/ussd-docs/docs/action"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating Menus
+            Action
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/decision"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Decision
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-decision"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Creating Links with decision
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/record"
-            class="lvl0  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
+            class="lvl1  active font-semibold text-blue-500 nav-menu__item hover:text-blue-500"
         >
             Record
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-record"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Saving Data with record
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/machine"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Machine
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-machine"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Running the App
-        </a>
-    
     </li>
     </ul>
-    </li>
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/api"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Api Reference
-        </a>
-    
     </li>
     </ul>
         </nav>
@@ -236,15 +171,150 @@
         <div class="DocSearch-content w-full lg:w-3/5 break-words pb-16 lg:pl-4" v-pre>
             <h1 id="record">Record</h1>
 
-<p>Every new session has different a session id. Record helps to save data for a particular request since it ties it self with the request id. Data can be saved on any state and retrieved on another state provided they have the same session id.</p>
+<p>Every new session has different a session id. Record helps to save data for a 
+particular request since it ties it self with the request id. Data can be 
+saved on any state and retrieved on another state provided they 
+have the same session id.</p>
 
-<h2>How it works?</h2>
+<h2 id="record-how">How it works?</h2>
 
-<p>Record connects with the cache of your choice and saves the data to cache. Since caches are faster than databases, they help to speed up the response time of ussd applications since the ussd gateway timeout if response delays. The unique identifier to your store is the session id, when it is not set, an exception will be thrown.</p>
+<p>Record connects with the cache of your choice and saves the data to cache. 
+Since caches are faster than databases, they help to speed up the response 
+time of ussd applications since the ussd gateway timeout if response delays. 
+The unique identifier to your store is the session id, when it is not set, 
+an exception will be thrown.</p>
 
-<h2>Why the need for record?</h2>
+<h2 id="record-why">Why the need for record?</h2>
 
-<p>It is impossible to collect data from users with just a state. You will have to have a series of states presented as a form that the user can fill. Data collected will have to be saved and used at a later date, hence the need for the record.</p>
+<p>It is impossible to collect data from users with just a state. You will have 
+to have a series of states presented as a form that the user can fill. 
+Data collected will have to be saved and used at a later date, 
+hence the need for the record.</p>
+
+<h2 id="record-manipulating-data">Manipulating Data</h2>
+
+<p>The ussd state class has a property <code>$record</code> which is an instance 
+of <code>Sparors\Ussd\Record</code> class. This will help you save, update, 
+retrieve or delete data when the need arises.</p>
+
+<h3 id="record-saving-data">Saving Data</h3>
+
+<p>To save data use the set method of the record class.</p>
+
+<pre><code class="language-php">$this-&gt;record-&gt;set('name', 'Benjamin');
+</code></pre>
+
+<h4 id="record-saving-multiple">Saving Multiple Data</h4>
+
+<p>To save multiple data at onces use the setMuliple</p>
+
+<pre><code class="language-php">$record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50]);
+</code></pre>
+
+<h4 id="record-auto-expire">Automatic Expiration</h4>
+
+<p>Sometimes, you don't want your cache to be filled with state data.
+You will want to automatically delete the old data.
+Set the expiration time you want in seconds.</p>
+
+<pre><code class="language-php">$record-&gt;set('name' =&gt; 'Isaac', 86400); // One day in seconds
+</code></pre>
+
+<p>You can also use datetime instead</p>
+
+<pre><code class="language-php">$record-&gt;setMultiple(['name' =&gt; 'Isaac', 'age' =&gt; 17, 'amount' =&gt; 3.50], now()-&gt;addDays(7));
+</code></pre>
+
+<h4 id="record-save-magic">Saving Data with Magic Method</h4>
+
+<p>You can dynamically save data with record by assigning values to a property.
+The property name will become the key used to save the value in the cache.</p>
+
+<pre><code class="language-php">// single value
+$record-&gt;name = 'Timothy';
+
+// multiple values
+$record(['name' =&gt; 'Timothy', 'age' =&gt; 17]);
+</code></pre>
+
+<blockquote>
+  <p>NB: The TTL of magic methods are taken from <code>config/ussd.php</code>.
+  <a href="../installation#installation-config-understanding">See</a></p>
+</blockquote>
+
+<h4 id="record-save-update">Updating Data</h4>
+
+<p>When you set a record that already exists, the value is overwritten in the cache.</p>
+
+<pre><code class="language-php">$record-&gt;set('name', 'Tom');
+
+$record-&gt;set('name', 'Jerry'); // Tom will update to Jerry.
+</code></pre>
+
+<h3 id="record-has-data">Check Data Exist</h3>
+
+<p>To check if a record is set and not null, use the has method</p>
+
+<pre><code class="language-php">if ($record-&gt;has('name')) {
+    echo "Name Already Set";
+} else {
+    echo "Name Not Set";
+}
+</code></pre>
+
+<h3 id="record-retrieve-data">Retrieve Data</h3>
+
+<p>Use the get method to retrieve saved data. Null will be returned when key not found</p>
+
+<pre><code class="language-php">$name = $record-&gt;get('name');
+</code></pre>
+
+<h4 id="record-retrieve-multiple">Retrieve Multiple Data</h4>
+
+<p>You can retrieve more than one day at a go.</p>
+
+<pre><code class="language-php">[$name, $age] = $record-&gt;getMultiple(['name', 'age']);
+</code></pre>
+
+<h4 id="record-retrieve-default">Setting default</h4>
+
+<p>Sometimes, you want to get something else when data can not be found instead of null. You can set the default value.</p>
+
+<pre><code class="language-php">$name = $record-&gt;get('name', 'Ussd User');
+
+[$balanceBefore, $balanceAfter] = $record-&gt;getMultiple(['balance_before', 'balance_after'], 0.00);
+</code></pre>
+
+<h4 id="record-retrieve-magic">Retrieve Data with magic method</h4>
+
+<p>You can retrieve data with magic methods using the key of value
+as the property of record.</p>
+
+<pre><code class="language-php">$name = $record-&gt;name;
+
+// or 
+
+$age = $record('age');
+</code></pre>
+
+<blockquote>
+  <p>NB: The default value of magic methods are taken from <code>config/ussd.php</code>.
+  <a href="../installation#installation-config-understanding">See</a></p>
+</blockquote>
+
+<h3 id="record-delete-data">Deleting Data</h3>
+
+<p>To delete single records use the delete method</p>
+
+<pre><code class="language-php">$record-&gt;delete('name');
+</code></pre>
+
+<h4 id="record-delete-multiple">Delete Multiple Data</h4>
+
+<p>To delete more than one at a time, use setMultiple</p>
+
+<pre><code class="language-php">$record-&gt;deleteMultiple(['name', 'age']);
+</code></pre>
         </div>
     </div>
 </section>
