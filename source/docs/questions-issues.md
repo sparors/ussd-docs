@@ -10,8 +10,9 @@ Have you found yourself stucked using the package? Have your found a bug? Probab
 
 If you have found a bug regarding security vulnerability please mail [isaacsai030@gmail.com](mailto:isaacsai030@gmail.com) instead of using the issue tracker.
 
-### Update from v1.0.0 to v1.1.0
+### Update from v1.0.0 to v2.0.0
 
-Although no breaking changes occured, we had to change the default namespace
-of the state classes. Hence, it advice you republish the config files to update
-it.
+##### *class_namespace* split to *state_namespace* and *action_namespace*.
+> Impact: Low.
+
+Just republish your config file.
