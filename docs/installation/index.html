@@ -25,8 +25,8 @@
         
                     <!-- Insert analytics code here -->
         
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=6f5e2f47827cfb3cc455">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
 
             </head>
 
@@ -70,11 +70,7 @@
             <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/getting-started"
-            class="lvl0 lvl0-active  nav-menu__item hover:text-blue-500"
-        >
-            Getting Started
-        </a>
+        <p class="nav-menu__item text-gray-600">GETTING STARTED</p>
     
             
         <ul class="my-0">
@@ -109,126 +105,65 @@
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/states"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            States
-        </a>
+        <p class="nav-menu__item text-gray-600">CORE CONCEPTS</p>
     
             
         <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/creating-states"
+        <a href="/ussd-docs/docs/state"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating States
+            State
         </a>
     
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/understanding-states"
+        <a href="/ussd-docs/docs/menu"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Understanding  States
+            Menu
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/menus"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Menus
-        </a>
-    
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/creating-menus"
+        <a href="/ussd-docs/docs/action"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating Menus
+            Action
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/decision"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Decision
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-decision"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Creating Links with decision
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/record"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Record
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-record"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Saving Data with record
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/machine"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Machine
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-machine"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Running the App
-        </a>
-    
     </li>
     </ul>
-    </li>
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/api"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Api Reference
-        </a>
-    
     </li>
     </ul>
         </nav>
@@ -243,9 +178,10 @@
 
 <h2 id="installation-config">Publish Configuration</h2>
 
-<p>Laravel Ussd provides zero configuration out of the box. To publish the config, run the vendor publish command:</p>
+<p>Laravel Ussd provides zero configuration out of the box. To publish the config, 
+run the vendor publish command:</p>
 
-<pre><code class="language-bash">php artisan vendor:publish --provider="Sparors\Ussd\UssdServiceProvider" --tag=config
+<pre><code class="language-bash">php artisan vendor:publish --provider="Sparors\Ussd\UssdServiceProvider" --tag=ussd-config
 </code></pre>
 
 <p>This is the default content of the config file:</p>
@@ -256,7 +192,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Class Namespace
+    | State Class Namespace
     |--------------------------------------------------------------------------
     |
     | This value sets the root namespace for Ussd State component classes in
@@ -264,7 +200,19 @@ return [
     |
     */
 
-    'class_namespace' =&gt; 'App\\Http\\Ussd',
+    'state_namespace' =&gt; env('USSD_STATE_NS', 'App\\Http\\Ussd\\States'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Action Class Namespace
+    |--------------------------------------------------------------------------
+    |
+    | This value sets the root namespace for Ussd Action component classes in
+    | your application.
+    |
+    */
+
+    'action_namespace' =&gt; env('USSD_ACTION_NS', 'App\\Http\\Ussd\\Actions'),
 
      /*
     |--------------------------------------------------------------------------
@@ -276,7 +224,7 @@ return [
     |
     */
 
-    'store' =&gt; null,
+    'cache_store' =&gt; env('USSD_STORE', null),
 
 
     /*
@@ -289,7 +237,7 @@ return [
     |
     */
 
-    'cache_ttl' =&gt; null,
+    'cache_ttl' =&gt; env('USSD_TTL', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -301,17 +249,30 @@ return [
     |
     */
 
-    'cache_default' =&gt; null,
+    'cache_default' =&gt; env('USSD_DEFAULT_VALUE', null),
 ];
 </code></pre>
 
-<p>By default new state classes will be created in <em>project/app/Http/Ussd directory</em> with <em>App\Http\Ussd</em> namespace. That can be changed with the <em>class_namespace</em> variable in <strong>ussd/config.php</strong>.</p>
+<h2 id="installation-config-understanding">Understanding the Configuration</h2>
 
-<p>The <em>store</em> variable specify which particular store to use. The list can be found in <strong>config/cache.php</strong> under the stores array variable. Leave it at null to use your default cache store.</p>
+<p>By default new state classes will be created in
+<code>project/app/Http/Ussd/State directory</code> with <code>App\Http\Ussd\States</code> namespace.
+That can be changed with the <em>state_namespace</em> variable in <strong>ussd/config.php</strong>.</p>
 
-<p>When using the magic methods of a record class to save data <em>(to be spoken of later)</em>, you can not specify the ttl option for the cache, the <em>cache_tll</em> variable sets the default value.</p>
+<p>Also a new action with <code>App\Http\Ussd\Actions</code> namespace by default.
+You can change it just like the states.</p>
 
-<p><em>cache_default</em> variable also specify the default value to return when a paricular key can not be found in the cache when accessed using the magic methods of a record class <em>(to be spoken of later)</em>.</p>
+<p>The <code>store</code> variable specifies which particular store to use.
+The list can be found in <strong>config/cache.php</strong> under the <code>stores</code> array variable.
+Leave it at null to use your default cache-store.</p>
+
+<p>When using the magic methods of a record class to save data
+<em>(to be spoken of later)</em>, you can not specify the TTL option for the cache,
+the <code>cache_tll</code> variable sets the default value.</p>
+
+<p><code>cache_default</code> variable also specifies the default value to return when a
+particular key can not be found in the cache when accessed using the magic
+methods of a record class <em>(to be spoken of later)</em>.</p>
         </div>
     </div>
 </section>

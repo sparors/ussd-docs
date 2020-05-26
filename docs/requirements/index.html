@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="description" content="Dependencies need to succcessly use package">
+        <meta name="description" content="Dependencies need to successfully use package">
 
         <meta property="og:site_name" content="Laravel Ussd"/>
         <meta property="og:title" content="Requirements | Laravel Ussd"/>
-        <meta property="og:description" content="Dependencies need to succcessly use package"/>
+        <meta property="og:description" content="Dependencies need to successfully use package"/>
         <meta property="og:url" content="https://sparors.github.io/ussd-docs/docs/requirements"/>
         <meta property="og:image" content="/ussd-docs/assets/img/logo.png"/>
         <meta property="og:type" content="website"/>
@@ -25,8 +25,8 @@
         
                     <!-- Insert analytics code here -->
         
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,700,700i,800,800i" rel="stylesheet">
-        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=6f5e2f47827cfb3cc455">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=50536a740e92440ea4e6">
 
             </head>
 
@@ -70,11 +70,7 @@
             <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/getting-started"
-            class="lvl0 lvl0-active  nav-menu__item hover:text-blue-500"
-        >
-            Getting Started
-        </a>
+        <p class="nav-menu__item text-gray-600">GETTING STARTED</p>
     
             
         <ul class="my-0">
@@ -109,126 +105,65 @@
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/states"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            States
-        </a>
+        <p class="nav-menu__item text-gray-600">CORE CONCEPTS</p>
     
             
         <ul class="my-0">
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/creating-states"
+        <a href="/ussd-docs/docs/state"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating States
+            State
         </a>
     
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/understanding-states"
+        <a href="/ussd-docs/docs/menu"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Understanding  States
+            Menu
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
-        <a href="/ussd-docs/docs/menus"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Menus
-        </a>
-    
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/creating-menus"
+        <a href="/ussd-docs/docs/action"
             class="lvl1   nav-menu__item hover:text-blue-500"
         >
-            Creating Menus
+            Action
         </a>
     
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/decision"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Decision
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-decision"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Creating Links with decision
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/record"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Record
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-record"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Saving Data with record
-        </a>
-    
-    </li>
-    </ul>
     </li>
             <li class="pl-4">
             
         <a href="/ussd-docs/docs/machine"
-            class="lvl0   nav-menu__item hover:text-blue-500"
+            class="lvl1   nav-menu__item hover:text-blue-500"
         >
             Machine
         </a>
     
-            
-        <ul class="my-0">
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/using-machine"
-            class="lvl1   nav-menu__item hover:text-blue-500"
-        >
-            Running the App
-        </a>
-    
     </li>
     </ul>
-    </li>
-            <li class="pl-4">
-            
-        <a href="/ussd-docs/docs/api"
-            class="lvl0   nav-menu__item hover:text-blue-500"
-        >
-            Api Reference
-        </a>
-    
     </li>
     </ul>
         </nav>
@@ -238,13 +173,20 @@
 
 <p>Laravel Ussd Package requires <strong>PHP 7.2+</strong> and <strong>Laravel 5.5.0+</strong></p>
 
-<p>This package uses Laravel Cache to store data. This means, the type of cache to use depends on your application's need, personal preferences or server restrictions. Extending the cache to use other drivers will still work with the package.</p>
+<p>This package uses Laravel Cache to store data. This means, the type of cache to
+use depends on your application's need, personal preferences, or server
+restrictions. Extending the cache to use other drivers will still
+work with the package.</p>
 
 <h2 id="cache-requirements">Cache Requirements</h2>
 
+<p>Your requirements may differ based on the set of drivers you decide to use.</p>
+
 <h3 id="cache-requirements-database">Database</h3>
 
-<p>To use the database cache, ensure that the following extensions required for the chosen database is installed and enabled. Laravel supports 4 databases: MySql, PostgreSQL, SQLite and SQL Server.</p>
+<p>To use the database cache, ensure that the extension required for the chosen
+database is installed and enabled. Laravel supports 4 databases:
+MySql, PostgreSQL, SQLite, and SQL Server.</p>
 
 <p>Create the following schema in your database.</p>
 
