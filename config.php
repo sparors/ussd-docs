@@ -9,8 +9,8 @@ return [
     'siteDescription' => 'Peace-of-mind from prototype to production',
 
     // Algolia DocSearch credentials
-    'docsearchApiKey' => '',
-    'docsearchIndexName' => '',
+    'docsearchApiKey' => '74d3945d9e6d08bcb8cd48fe58d4a948',
+    'docsearchIndexName' => 'sparors_ussd',
 
     // navigation menu
     'navigation' => require_once('navigation.php'),

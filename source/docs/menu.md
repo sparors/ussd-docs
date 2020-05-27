@@ -147,7 +147,7 @@ $this->menu->listing(['Buy Airtime', 'Buy Data']);
 
 // "1.Buy Airtime\n2.Buy Data"
 
-$menu->listing(['Buy Airtime', 'Buy Data'], ')');
+$this->menu->listing(['Buy Airtime', 'Buy Data'], ')');
 
 // "1)Buy Airtime\n2)Buy Data"
 
