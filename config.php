@@ -5,7 +5,7 @@ use Illuminate\Support\Str;
 return [
     'baseUrl' => '',
     'production' => false,
-    'siteName' => 'Laravel Ussd',
+    'siteName' => 'Laravel USSD',
     'siteDescription' => 'Peace-of-mind from prototype to production',
 
     // Algolia DocSearch credentials
