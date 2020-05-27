@@ -16,6 +16,7 @@
         <meta name="twitter:image:alt" content="Laravel USSD">
         <meta name="twitter:card" content="summary_large_image">
 
+                    <meta name="generator" content="tighten_jigsaw_doc">
         
         <title>Laravel USSD | Creating States</title>
 
@@ -28,6 +29,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/ussd-docs/assets/build/css/main.css?id=36bd75733674d1919eaa">
 
+                    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
             </head>
 
     <body class="flex flex-col justify-between min-h-screen bg-gray-100 text-gray-800 leading-normal font-sans">
@@ -42,6 +44,32 @@
                 </div>
 
                 <div class="flex flex-1 justify-end items-center text-right md:pl-10">
+                                            <button
+    title="Start searching"
+    type="button"
+    class="flex md:hidden bg-gray-100 hover:bg-blue-100 justify-center items-center border border-gray-500 rounded-full focus:outline-none h-10 px-3"
+    onclick="searchInput.toggle()"
+>
+    <img src="/assets/img/magnifying-glass.svg" alt="search icon" class="h-4 w-4 max-w-none">
+</button>
+
+<div id="js-search-input" class="docsearch-input__wrapper hidden md:block">
+    <label for="search" class="hidden">Search</label>
+
+    <input
+        id="docsearch-input"
+        class="docsearch-input relative block h-10 transition-fast w-full lg:w-1/2 xl:w-1/3 bg-gray-100 outline-none rounded-full text-gray-700 border border-gray-500 focus:border-blue-400 ml-auto px-4 pb-0"
+        name="docsearch"
+        type="text"
+        placeholder="Search"
+    >
+
+    <button
+        class="md:hidden absolute pin-t pin-r h-full font-light text-3xl text-blue-500 hover:text-blue-600 focus:outline-none -mt-px pr-7"
+        onclick="searchInput.toggle()"
+    >&times;</button>
+</div>
+
                                     </div>
             </div>
 
@@ -321,7 +349,24 @@ class Welcome extends State
         },
     }
 </script>
+            <script type="text/javascript">
+            docsearch({
+                apiKey: '74d3945d9e6d08bcb8cd48fe58d4a948',
+                indexName: 'sparors_ussd',
+                inputSelector: '#docsearch-input',
+                debug: false // Set debug to true if you want to inspect the dropdown
+            });
 
+            const searchInput = {
+                toggle() {
+                    const menu = document.getElementById('js-search-input');
+                    menu.classList.toggle('hidden');
+                    menu.classList.toggle('md:block');
+                    document.getElementById('docsearch-input').focus();
+                },
+            }
+        </script>
+    
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center">
                 <li class="md:mr-2">
